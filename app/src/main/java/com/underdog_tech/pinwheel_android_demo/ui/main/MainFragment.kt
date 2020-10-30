@@ -1,4 +1,4 @@
-package com.underdog_tech.pinwheel_android_sdk.ui.main
+package com.underdog_tech.pinwheel_android_demo.ui.main
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -11,7 +11,8 @@ import com.underdog_tech.pinwheel_android.PinwheelFragment
 import com.underdog_tech.pinwheel_android.model.PinwheelActionEvent
 import com.underdog_tech.pinwheel_android.model.PinwheelExitEvent
 import com.underdog_tech.pinwheel_android.model.PinwheelSuccessEvent
-import com.underdog_tech.pinwheel_android_sdk.R
+import com.underdog_tech.pinwheel_android_demo.R
+import com.underdog_tech.pinwheel_android_demo.databinding.MainFragmentBinding
 import kotlinx.android.synthetic.main.main_fragment.*
 import timber.log.Timber
 
@@ -23,7 +24,10 @@ class MainFragment : Fragment(), PinwheelEventListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        val binding = MainFragmentBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = this
+        binding.viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -32,7 +36,7 @@ class MainFragment : Fragment(), PinwheelEventListener {
     }
 
     private fun navigateToTheLink(token: String) {
-        fragmentManager?.let {
+        parentFragmentManager.let {
             val transaction = it.beginTransaction()
             val pinwheelFragment = PinwheelFragment.newInstance(token)
             pinwheelFragment.pinwheelEventListener = this
@@ -55,7 +59,7 @@ class MainFragment : Fragment(), PinwheelEventListener {
 
     override fun onExit(exitEvent: PinwheelExitEvent) {
         Timber.d("ON EXIT")
-        fragmentManager?.popBackStack()
+        parentFragmentManager.popBackStack()
     }
 
     override fun onEvent(actionEvent: PinwheelActionEvent) {

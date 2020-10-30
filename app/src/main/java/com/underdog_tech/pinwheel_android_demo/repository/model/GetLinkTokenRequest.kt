@@ -1,13 +1,13 @@
-package com.underdog_tech.pinwheel_android_sdk.repository.model
+package com.underdog_tech.pinwheel_android_demo.repository.model
 
 import com.google.gson.annotations.SerializedName
 
 data class GetLinkTokenRequest(
-    val job: String,
-    @SerializedName("org_name") val orgName: String,
-    @SerializedName("account_number") val accountNumber: String,
-    @SerializedName("routing_number") val routingNumber: String,
-    @SerializedName("account_type") val accountType: String,
+    val job: String?,
+    @SerializedName("org_name") val orgName: String?,
+    @SerializedName("account_number") val accountNumber: String?,
+    @SerializedName("routing_number") val routingNumber: String?,
+    @SerializedName("account_type") val accountType: String?,
     @SerializedName("account_name") val accountName: String?,
     val amount: Int?,
     @SerializedName("employer_id") val employerId: String?,

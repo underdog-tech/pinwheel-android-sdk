@@ -1,4 +1,4 @@
-package com.underdog_tech.pinwheel_android_sdk.repository.model
+package com.underdog_tech.pinwheel_android_demo.repository.model
 
 import com.google.gson.annotations.SerializedName
 

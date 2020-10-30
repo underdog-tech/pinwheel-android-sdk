@@ -1,4 +1,4 @@
-package com.underdog_tech.pinwheel_android_sdk
+package com.underdog_tech.pinwheel_android_demo
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,6 +1,6 @@
-package com.underdog_tech.pinwheel_android_sdk.repository.network
+package com.underdog_tech.pinwheel_android_demo.repository.network
 
-import com.underdog_tech.pinwheel_android_sdk.BuildConfig
+import com.underdog_tech.pinwheel_android_demo.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 

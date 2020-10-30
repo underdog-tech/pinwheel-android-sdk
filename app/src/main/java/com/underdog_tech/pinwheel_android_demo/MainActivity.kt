@@ -1,8 +1,8 @@
-package com.underdog_tech.pinwheel_android_sdk
+package com.underdog_tech.pinwheel_android_demo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.underdog_tech.pinwheel_android_sdk.ui.main.MainFragment
+import com.underdog_tech.pinwheel_android_demo.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 

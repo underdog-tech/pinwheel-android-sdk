@@ -1,4 +1,4 @@
-package com.underdog_tech.pinwheel_android_sdk.repository.network
+package com.underdog_tech.pinwheel_android_demo.repository.network
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -9,7 +9,7 @@ android {
     compileSdkVersion 29
 
     defaultConfig {
-        applicationId "com.underdog_tech.pinwheel_android_sdk"
+        applicationId "com.underdog_tech.pinwheel_android_demo"
         minSdkVersion 22
         targetSdkVersion 29
         versionCode 1
@@ -18,6 +18,10 @@ android {
         buildConfigField "String", "API_SECRET", "\"${API_SECRET}\""
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding true
     }
 
     buildTypes {
@@ -53,6 +57,7 @@ dependencies {
     // Retrofit and relevant converters
     implementation 'com.squareup.retrofit2:retrofit:2.8.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
     // Feature module Support
     testImplementation 'junit:junit:4.13.1'

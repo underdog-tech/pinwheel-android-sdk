@@ -1,8 +1,8 @@
-package com.underdog_tech.pinwheel_android_sdk.repository.useCase
+package com.underdog_tech.pinwheel_android_demo.repository.useCase
 
-import com.underdog_tech.pinwheel_android_sdk.repository.model.GetLinkTokenRequest
-import com.underdog_tech.pinwheel_android_sdk.repository.model.GetLinkTokenResponse
-import com.underdog_tech.pinwheel_android_sdk.repository.network.ApiAdapter
+import com.underdog_tech.pinwheel_android_demo.repository.model.GetLinkTokenRequest
+import com.underdog_tech.pinwheel_android_demo.repository.model.GetLinkTokenResponse
+import com.underdog_tech.pinwheel_android_demo.repository.network.ApiAdapter
 import timber.log.Timber
 import java.lang.Exception
 

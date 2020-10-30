@@ -1,4 +1,4 @@
-package com.underdog_tech.pinwheel_android_sdk
+package com.underdog_tech.pinwheel_android_demo
 
 import org.junit.Test
 
