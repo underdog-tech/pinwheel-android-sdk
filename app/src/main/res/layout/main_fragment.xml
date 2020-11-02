@@ -2,93 +2,99 @@
 <layout>
 
     <data>
+
         <variable
             name="viewModel"
             type="com.underdog_tech.pinwheel_android_demo.ui.main.MainViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/mainFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.main.MainFragment">
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
-        <EditText
-            android:id="@+id/mode"
-            style="@style/FormField"
-            android:text="@={viewModel.mode}"
-            android:hint="mode"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mainFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.main.MainFragment">
 
-        <EditText
-            android:id="@+id/orgName"
-            style="@style/FormField"
-            android:text="@={viewModel.orgName}"
-            android:hint="org_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mode" />
+            <EditText
+                android:id="@+id/mode"
+                style="@style/FormField"
+                android:hint="mode"
+                android:text="@={viewModel.mode}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/routingNumber"
-            style="@style/FormField"
-            android:text="@={viewModel.routingNumber}"
-            android:hint="routing_number"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/orgName" />
+            <EditText
+                android:id="@+id/orgName"
+                style="@style/FormField"
+                android:hint="org_name"
+                android:text="@={viewModel.orgName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mode" />
 
-        <EditText
-            android:id="@+id/accountNumber"
-            style="@style/FormField"
-            android:text="@={viewModel.accountNumber}"
-            android:hint="account_number"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/routingNumber" />
+            <EditText
+                android:id="@+id/routingNumber"
+                style="@style/FormField"
+                android:hint="routing_number"
+                android:text="@={viewModel.routingNumber}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/orgName" />
 
-        <EditText
-            android:id="@+id/job"
-            style="@style/FormField"
-            android:text="@={viewModel.job}"
-            android:hint="job"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/accountNumber" />
+            <EditText
+                android:id="@+id/accountNumber"
+                style="@style/FormField"
+                android:hint="account_number"
+                android:text="@={viewModel.accountNumber}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/routingNumber" />
 
-        <EditText
-            android:id="@+id/accountType"
-            style="@style/FormField"
-            android:text="@={viewModel.accountType}"
-            android:hint="account_type"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/job" />
+            <EditText
+                android:id="@+id/job"
+                style="@style/FormField"
+                android:hint="job"
+                android:text="@={viewModel.job}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/accountNumber" />
 
-        <CheckBox
-            android:id="@+id/skipSurvey"
-            style="@style/FormField"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/accountType"
-            android:text="Skip exit survey"
-            android:checked="@={viewModel.skipExitSurvey}"
-            />
+            <EditText
+                android:id="@+id/accountType"
+                style="@style/FormField"
+                android:hint="account_type"
+                android:text="@={viewModel.accountType}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/job" />
 
-
-        <Button
-            android:id="@+id/linkButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Create Link Token"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <CheckBox
+                android:id="@+id/skipSurvey"
+                style="@style/FormField"
+                android:checked="@={viewModel.skipExitSurvey}"
+                android:text="Skip exit survey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/accountType" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/linkButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Create Link Token"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
