@@ -66,6 +66,8 @@ references:
       name: Create Google Play Key
       command: echo $GOOGLE_PLAY_KEY > google-play-key.json
 
+jobs:
+
   test_unit:
     <<: *android_config
 
@@ -91,28 +93,28 @@ references:
       - store_test_results:
           path: app/build/test-results/
 
-beta_deployment:
-  <<: *android_config
+  beta_deployment:
+    <<: *android_config
 
-  steps:
-    - checkout
-    - *restore_gradle_cache
-    - *restore_gems_cache
-    - *ruby_dependencies
-    - *create_keystore_properties
-    - *decode_android_key
-    - *android_dependencies
-    - *save_gradle_cache
-    - *save_gems_cache
-    - *create_google_play_key
+    steps:
+      - checkout
+      - *restore_gradle_cache
+      - *restore_gems_cache
+      - *ruby_dependencies
+      - *create_keystore_properties
+      - *decode_android_key
+      - *android_dependencies
+      - *save_gradle_cache
+      - *save_gems_cache
+      - *create_google_play_key
 
-    - run:
-        name: Deploy to Play Store
-        command: bundle exec fastlane beta
+      - run:
+          name: Deploy to Play Store
+          command: bundle exec fastlane beta
 
-    - store_artifacts:
-        path: app/build/outputs/mapping
-        destination: /mapping/
+      - store_artifacts:
+          path: app/build/outputs/mapping
+          destination: /mapping/
 
 workflows:
   version: 2
