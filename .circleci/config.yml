@@ -53,7 +53,7 @@ references:
   decode_android_key: &decode_android_key
     run:
       name: Decode Android key store
-      command: echo $BASE_64_KEYSTORE | base64 -d | tee keystore app/keystore > /dev/null
+      command: echo $BASE_64_KEYSTORE | base64 -d | tee debug.keystore app/debug.keystore > /dev/null
 
   create_keystore_properties: &create_keystore_properties
     run:
