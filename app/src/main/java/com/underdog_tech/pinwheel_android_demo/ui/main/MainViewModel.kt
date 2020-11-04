@@ -19,7 +19,6 @@ class MainViewModel : ViewModel() {
     val skipExitSurvey = MutableLiveData(false)
 
     fun generateLinkToken(onTokenGenerated: (String) -> Unit) {
-        // todo provide body from outside
         val body = GetLinkTokenRequest(
             job = job.value,
             orgName = orgName.value,
