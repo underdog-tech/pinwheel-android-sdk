@@ -39,7 +39,7 @@ platform :android do
   lane :beta do |options|
     assemble_build(build_flavor:"Beta", build_type:"Release")
     upload_to_play_store(
-        track: 'beta',
+        track: 'Beta track',
         apk: Actions.lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
     )
   end
