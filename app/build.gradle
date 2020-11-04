@@ -16,8 +16,8 @@ android {
         applicationId "com.underdog_tech.pinwheel_android_demo"
         minSdkVersion 22
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         buildConfigField "String", "API_SECRET", "\"${API_SECRET}\""
 
