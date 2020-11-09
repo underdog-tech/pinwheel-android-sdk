@@ -66,6 +66,12 @@ references:
       name: Create Google Play Key
       command: echo $GOOGLE_PLAY_KEY > google-play-key.json
 
+  create_bintray_credentials: &create_bintray_credentials
+    run:
+      name: Create Bintray Credentials
+      command: printf 'BINTRAY_USER=%s\nBINTRAY_KEY=%s' \
+      $BINTRAY_USER $BINTRAY_KEY > gradle.properties
+
 jobs:
 
   test_unit:
@@ -77,6 +83,7 @@ jobs:
       - *restore_gems_cache
       - *ruby_dependencies
       - *create_keystore_properties
+      - *create_bintray_credentials
       - *decode_android_key
       - *android_dependencies
       - *save_gradle_cache
@@ -102,6 +109,7 @@ jobs:
       - *restore_gems_cache
       - *ruby_dependencies
       - *create_keystore_properties
+      - *create_bintray_credentials
       - *decode_android_key
       - *android_dependencies
       - *save_gradle_cache
