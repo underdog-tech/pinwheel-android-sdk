@@ -69,8 +69,7 @@ references:
   create_bintray_credentials: &create_bintray_credentials
     run:
       name: Create Bintray Credentials
-      command: printf 'BINTRAY_USER=%s\nBINTRAY_KEY=%s' \
-      $BINTRAY_USER $BINTRAY_KEY > gradle.properties
+      command: printf 'BINTRAY_USER=%s\nBINTRAY_KEY=%s' \ $BINTRAY_USER $BINTRAY_KEY > gradle.properties
 
 jobs:
 
