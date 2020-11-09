@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.underdog_tech.pinwheel_android.PinwheelEventListener
 import com.underdog_tech.pinwheel_android.PinwheelFragment
 import com.underdog_tech.pinwheel_android.model.PinwheelActionEvent
@@ -60,6 +61,7 @@ class MainFragment : Fragment(), PinwheelEventListener {
     override fun onExit(exitEvent: PinwheelExitEvent) {
         Timber.d("ON EXIT")
         parentFragmentManager.popBackStack()
+        Toast.makeText(context, "Pinwheel On Exit Event Fired", Toast.LENGTH_LONG).show()
     }
 
     override fun onEvent(actionEvent: PinwheelActionEvent) {
