@@ -23,8 +23,8 @@ afterEvaluate {
 }
 
 bintray {
-    user = project.property('bintray.user')
-    key = project.property('bintray.token')
+    user = project.property('BINTRAY_USER')
+    key = project.property('BINTRAY_KEY')
     publications = ['release']
     publish = true
     override = true
@@ -36,6 +36,7 @@ bintray {
         licenses = ['MIT']
         vcsUrl = 'https://github.com/underdog-tech/androidSDKDemo'
         publicDownloadNumbers = true
+        dryRun = true
         version {
             name = libraryVersion
             released = new Date()
