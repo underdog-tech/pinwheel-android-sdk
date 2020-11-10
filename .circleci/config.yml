@@ -121,6 +121,24 @@ jobs:
           path: app/build/outputs/mapping
           destination: /mapping/
 
+  bintray_publish:
+    <<: *android_config
+
+    steps:
+      - checkout
+      - *restore_gradle_cache
+      - *restore_gems_cache
+      - *ruby_dependencies
+      - *create_keystore_properties
+      - *decode_android_key
+      - *android_dependencies
+      - *save_gradle_cache
+      - *save_gems_cache
+
+      - run:
+          name: Publish to Bintray
+          command: ./gradlew clean build bintrayUpload
+
 workflows:
   version: 2
   workflow:
@@ -132,6 +150,14 @@ workflows:
             branches:
               only:
                 - main
+          requires:
+            - test_unit
+
+      - bintray_publish:
+          filter:
+            branches:
+              only:
+                -release
           requires:
             - test_unit
 
