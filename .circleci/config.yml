@@ -154,10 +154,10 @@ workflows:
             - test_unit
 
       - bintray_publish:
-          filter:
+          filters:
             branches:
               only:
-                -release
+                - release
           requires:
             - test_unit
 

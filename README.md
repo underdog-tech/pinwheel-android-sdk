@@ -12,11 +12,14 @@ In `gradle.properties` file, provide a `CDN_URL`
 
 ## Integration
 
+### Gradle
+```implementation 'com.underdog_tech.pinwheel:pinwheel-android:1.0.0'```
+
 ### PinwheelFragment
 Sdk provides the `PinwheelFragment` that takes `linkToken: String` as an argument. 
 ([Learn how to get the linkToken.](https://docs.getpinwheel.com/api-reference/index.html#create-link-token))<br/>
 `PinwheelFragment` has `newInstance(linkToken: String)` method but it is ok to use different way to pass the argument.
-If `linkToken` is not present, fragment will throw `IllegalStateExcpetion`.
+If `linkToken` is not present, fragment will throw `IllegalStateException`.
 
 ### PinwheelEventListener
 To listen for the events coming from the Link, implement `PinwheelEventListener`. <br/>
