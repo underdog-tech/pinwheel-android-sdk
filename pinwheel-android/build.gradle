@@ -36,7 +36,6 @@ bintray {
         licenses = ['MIT']
         vcsUrl = 'https://github.com/underdog-tech/androidSDKDemo'
         publicDownloadNumbers = true
-        dryRun = true
         version {
             name = libraryVersion
             released = new Date()
