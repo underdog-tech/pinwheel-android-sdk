@@ -10,12 +10,12 @@ def keyStoreProperties = new Properties()
 keyStoreProperties.load(new FileInputStream(keyStorePropertiesFile))
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     flavorDimensions "default"
     defaultConfig {
         applicationId "com.underdog_tech.pinwheel_android_demo"
         minSdkVersion 22
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 3
         versionName "1.2"
 
