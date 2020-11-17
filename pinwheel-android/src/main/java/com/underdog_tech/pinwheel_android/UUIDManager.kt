@@ -15,7 +15,13 @@ class UUIDManager(context: Context) {
 
     val uuid: String?
         get() {
-        return sharedPreferences.getString("uuid", UUID.randomUUID().toString())
-    }
+            return if(sharedPreferences.contains("uuid")) {
+                sharedPreferences.getString("uuid", null)
+            } else {
+                val uuid = UUID.randomUUID().toString()
+                sharedPreferences.edit().putString("uuid", uuid).apply()
+                uuid
+            }
+        }
 
 }

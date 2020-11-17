@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
 import androidx.fragment.app.Fragment
-import java.lang.IllegalStateException
 
 class PinwheelFragment : Fragment() {
 
@@ -34,7 +33,7 @@ class PinwheelFragment : Fragment() {
         Pinwheel.init(webView, readLinkToken(), pinwheelEventListener)
     }
 
-    private fun readLinkToken(): String {
+    private fun readLinkToken() : String {
         return arguments?.getString(("linkToken")) ?: throw IllegalStateException("In order to proceed, you need to provide the Link Token")
     }
 }
