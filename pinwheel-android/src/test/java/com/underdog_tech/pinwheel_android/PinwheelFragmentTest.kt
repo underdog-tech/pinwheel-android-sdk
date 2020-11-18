@@ -40,7 +40,7 @@ class PinwheelFragmentTest {
     fun `check if PinwheelFragment renders properly with linkToken provided`() {
         scenario?.moveToState(Lifecycle.State.RESUMED)
         scenario?.onFragment { fragment ->
-            assert(!fragment.isResumed)
+            assert(fragment.isResumed)
         } ?: Assert.fail()
     }
 
