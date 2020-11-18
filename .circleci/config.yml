@@ -95,8 +95,15 @@ jobs:
           path: app/build/reports/
           destination: /reports/
 
+      - store_artifacts:
+          path: pinwheel-android/build/reports/
+          destination: /reports/
+
       - store_test_results:
           path: app/build/test-results/
+
+      - store_test_results:
+          path: pinwheel-android/build/test-results/
 
   beta_deployment:
     <<: *android_config
