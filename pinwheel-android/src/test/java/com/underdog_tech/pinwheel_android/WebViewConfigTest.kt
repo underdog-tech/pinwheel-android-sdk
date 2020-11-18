@@ -1,10 +1,8 @@
-package com.underdog_tech.pinwheel_android_demo
+package com.underdog_tech.pinwheel_android
 
 import android.os.Build
 import android.webkit.WebView
 import androidx.test.core.app.ApplicationProvider
-import com.underdog_tech.pinwheel_android.BuildConfig
-import com.underdog_tech.pinwheel_android.Pinwheel
 import com.underdog_tech.pinwheel_android.webview.PinwheelWebViewClient
 import org.junit.Before
 import org.junit.Test

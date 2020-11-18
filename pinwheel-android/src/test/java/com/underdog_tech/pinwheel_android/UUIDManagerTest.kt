@@ -1,9 +1,8 @@
-package com.underdog_tech.pinwheel_android_demo
+package com.underdog_tech.pinwheel_android
 
 import android.content.Context
 import android.os.Build
 import androidx.test.core.app.ApplicationProvider
-import com.underdog_tech.pinwheel_android.UUIDManager
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
