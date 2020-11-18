@@ -1,4 +1,4 @@
-package com.underdog_tech.pinwheel_android
+package com.underdog_tech.pinwheel_android_demo
 
 import android.os.Build
 import android.os.Bundle
@@ -7,6 +7,10 @@ import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ApplicationProvider
+import com.underdog_tech.pinwheel_android.BuildConfig
+import com.underdog_tech.pinwheel_android.Pinwheel
+import com.underdog_tech.pinwheel_android.PinwheelFragment
+import com.underdog_tech.pinwheel_android.R
 import com.underdog_tech.pinwheel_android.webview.PinwheelWebViewClient
 import org.junit.Assert
 import org.junit.Before

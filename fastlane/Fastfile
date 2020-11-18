@@ -29,7 +29,7 @@ platform :android do
   desc "Run Unit Tests"
   lane :unit_tests do |options|
     gradle(
-        task: "clean assembleDebug testDebugUnitTest",
+        task: "test",
         flavor: options[:build_flavor],
         build_type: options[:build_type]
       )
