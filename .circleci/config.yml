@@ -89,14 +89,21 @@ jobs:
 
       - run:
           name: Run unit tests
-          command: bundle exec fastlane unit_tests build_flavor:$BUILD_FLAVOR build_type:$BUILD_TYPE
+          command: ./gradlew test
 
       - store_artifacts:
           path: app/build/reports/
           destination: /reports/
 
+      - store_artifacts:
+          path: pinwheel-android/build/reports/
+          destination: /reports/
+
       - store_test_results:
           path: app/build/test-results/
+
+      - store_test_results:
+          path: pinwheel-android/build/test-results/
 
   beta_deployment:
     <<: *android_config
