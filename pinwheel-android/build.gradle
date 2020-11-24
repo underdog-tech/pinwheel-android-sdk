@@ -22,6 +22,28 @@ afterEvaluate {
     }
 }
 
+version = '1.0.0'
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
 bintray {
     user = project.property('BINTRAY_USER')
     key = project.property('BINTRAY_KEY')
@@ -29,12 +51,13 @@ bintray {
     publish = true
     override = true
     pkg {
-        repo = 'pinwheel-android-sdk'
+        repo = 'maven'
         name = libraryArtifactId
-        desc = 'Pinwheel android sdk description'
+        desc = 'Pinwheel Android SDK'
         userOrg = 'underdog-technologies'
         licenses = ['MIT']
         vcsUrl = 'https://github.com/underdog-tech/androidSDKDemo'
+        publish = true
         publicDownloadNumbers = true
         version {
             name = libraryVersion
@@ -91,3 +114,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
+
+apply from: 'install.gradle'
