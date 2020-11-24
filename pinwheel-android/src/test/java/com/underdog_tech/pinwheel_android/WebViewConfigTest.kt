@@ -3,6 +3,7 @@ package com.underdog_tech.pinwheel_android
 import android.os.Build
 import android.webkit.WebView
 import androidx.test.core.app.ApplicationProvider
+import com.underdog_tech.pinwheel_android.Pinwheel.CDN_URL
 import com.underdog_tech.pinwheel_android.webview.PinwheelWebViewClient
 import org.junit.Before
 import org.junit.Test
@@ -34,7 +35,7 @@ class WebViewConfigTest {
     @Test
     fun `test loaded URL`() {
         Pinwheel.init(webView, "linkToken", null)
-        assert(webView.url.equals(BuildConfig.CDN_URL))
+        assert(webView.url.equals(CDN_URL))
     }
 
     @Test

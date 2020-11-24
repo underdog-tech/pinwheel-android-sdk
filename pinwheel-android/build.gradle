@@ -7,7 +7,7 @@ plugins {
 
 def libraryGroupId = 'com.underdog_tech.pinwheel'
 def libraryArtifactId = 'pinwheel-android'
-def libraryVersion = '1.0.0'
+def libraryVersion = '1.0.1'
 afterEvaluate {
     publishing {
         publications {
@@ -31,10 +31,11 @@ bintray {
     pkg {
         repo = 'pinwheel-android-sdk'
         name = libraryArtifactId
-        desc = 'Pinwheel android sdk description'
+        desc = 'Pinwheel Android SDK'
         userOrg = 'underdog-technologies'
         licenses = ['MIT']
         vcsUrl = 'https://github.com/underdog-tech/androidSDKDemo'
+        publish = true
         publicDownloadNumbers = true
         version {
             name = libraryVersion
@@ -91,3 +92,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
+
+apply from: 'install.gradle'
