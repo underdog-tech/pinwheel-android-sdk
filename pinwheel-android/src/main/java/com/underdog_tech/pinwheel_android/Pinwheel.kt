@@ -7,6 +7,8 @@ import com.underdog_tech.pinwheel_android.webview.PinwheelWebViewClient
 
 object Pinwheel {
 
+    const val CDN_URL= "https://cdn.getpinwheel.com/link-v2.html"
+
     fun init(webView: WebView, linkToken: String, callback: PinwheelEventListener?) {
         val uniqueUserId = UUIDManager(webView.context).uuid
 
@@ -23,6 +25,6 @@ object Pinwheel {
         val pinwheelJSInterface = PinwheelJavaScriptInterface(callback)
         pinwheelJSInterface.bind((webView))
 
-        webView.loadUrl(BuildConfig.CDN_URL)
+        webView.loadUrl(CDN_URL)
     }
 }

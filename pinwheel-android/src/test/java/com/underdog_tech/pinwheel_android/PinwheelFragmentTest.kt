@@ -7,6 +7,7 @@ import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ApplicationProvider
+import com.underdog_tech.pinwheel_android.Pinwheel.CDN_URL
 import com.underdog_tech.pinwheel_android.webview.PinwheelWebViewClient
 import org.junit.Assert
 import org.junit.Before
@@ -68,7 +69,7 @@ class PinwheelFragmentTest {
         scenario?.onFragment { fragment ->
             val webView = fragment.view?.findViewById<WebView>(R.id.webView)
             webView?.let {
-                assert(it.url.equals(BuildConfig.CDN_URL))
+                assert(it.url.equals(CDN_URL))
             } ?: Assert.fail("Web View is null")
         }
     }
