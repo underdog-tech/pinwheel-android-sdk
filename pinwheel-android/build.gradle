@@ -7,7 +7,7 @@ plugins {
 
 def libraryGroupId = 'com.underdog_tech.pinwheel'
 def libraryArtifactId = 'pinwheel-android'
-def libraryVersion = '1.0.0'
+def libraryVersion = '1.0.1'
 afterEvaluate {
     publishing {
         publications {
@@ -22,28 +22,6 @@ afterEvaluate {
     }
 }
 
-version = '1.0.0'
-
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
-
 bintray {
     user = project.property('BINTRAY_USER')
     key = project.property('BINTRAY_KEY')
@@ -51,7 +29,7 @@ bintray {
     publish = true
     override = true
     pkg {
-        repo = 'maven'
+        repo = 'pinwheel-android-sdk'
         name = libraryArtifactId
         desc = 'Pinwheel Android SDK'
         userOrg = 'underdog-technologies'
