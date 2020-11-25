@@ -3,7 +3,7 @@ package com.underdog_tech.pinwheel_android.webview
 import android.webkit.WebView
 import android.webkit.WebViewClient
 
-class PinwheelWebViewClient(private val linkToken: String, private val uuid: String): WebViewClient() {
+class PinwheelWebViewClient(private val linkToken: String, private val uuid: String, private val timestamp: Long): WebViewClient() {
 
     override fun onPageFinished(view: WebView?, url: String?) {
         view?.let { injectJS(it) }
@@ -20,6 +20,8 @@ class PinwheelWebViewClient(private val linkToken: String, private val uuid: Str
                                 type: 'PINWHEEL_INIT',
                                 payload: {
                                     fullScreen: true,
+                                    platform: 'android',
+                                    initializationTime: $timestamp,
                                     linkToken: '$linkToken',
                                     uniqueUserId: '$uuid',
                                  }
