@@ -29,6 +29,6 @@ object Pinwheel {
     }
 
     private fun getUnixTimestamp(): Long {
-        return System.currentTimeMillis() / 1000L
+        return System.currentTimeMillis()
     }
 }
