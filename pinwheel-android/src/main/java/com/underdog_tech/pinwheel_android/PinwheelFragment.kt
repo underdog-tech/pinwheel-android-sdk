@@ -5,11 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
 class PinwheelFragment : Fragment() {
 
     var pinwheelEventListener: PinwheelEventListener? = null
+    var webView: WebView? = null
 
     companion object {
         fun newInstance(linkToken: String): PinwheelFragment {
@@ -23,17 +26,47 @@ class PinwheelFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
+        enableFullscreenMode()
         return inflater.inflate(R.layout.pinwheel_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val webView = view.findViewById<WebView>(R.id.webView)
-
-        Pinwheel.init(webView, readLinkToken(), pinwheelEventListener)
+        webView = view.findViewById(R.id.webView)
+        webView?.let {
+            attachOnBackPressedCallback()
+            Pinwheel.init(it, readLinkToken(), pinwheelEventListener)
+        }
     }
 
-    private fun readLinkToken() : String {
+    private fun attachOnBackPressedCallback() {
+        val callback = object: OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if(webView?.canGoBack() == true) {
+                    webView?.goBack()
+                } else {
+                    isEnabled = false
+                    requireActivity().onBackPressed()
+                }
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+    }
+
+    private fun readLinkToken(): String {
         return arguments?.getString(("linkToken")) ?: throw IllegalStateException("In order to proceed, you need to provide the Link Token")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        disableFullscreenMode()
+    }
+
+    private fun enableFullscreenMode() {
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+    }
+
+    private fun disableFullscreenMode() {
+        (requireActivity() as AppCompatActivity).supportActionBar?.show()
     }
 }
