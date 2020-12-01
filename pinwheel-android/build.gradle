@@ -7,7 +7,7 @@ plugins {
 
 def libraryGroupId = 'com.underdog_tech.pinwheel'
 def libraryArtifactId = 'pinwheel-android'
-def libraryVersion = '1.0.1'
+def libraryVersion = '1.0.2'
 afterEvaluate {
     publishing {
         publications {
@@ -82,6 +82,7 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'com.google.code.gson:gson:2.8.6'
 
     testImplementation "androidx.fragment:fragment-testing:1.2.5"

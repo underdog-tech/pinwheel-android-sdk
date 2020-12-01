@@ -18,7 +18,7 @@
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/mainFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             tools:context=".ui.main.MainFragment">
 
             <EditText

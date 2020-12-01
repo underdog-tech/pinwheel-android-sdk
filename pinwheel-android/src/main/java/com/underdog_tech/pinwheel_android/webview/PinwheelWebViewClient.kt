@@ -20,7 +20,7 @@ class PinwheelWebViewClient(private val linkToken: String, private val uuid: Str
                                 type: 'PINWHEEL_INIT',
                                 payload: {
                                     fullScreen: true,
-                                    platform: 'android',
+                                    sdk: 'android',
                                     initializationTime: $timestamp,
                                     linkToken: '$linkToken',
                                     uniqueUserId: '$uuid',
