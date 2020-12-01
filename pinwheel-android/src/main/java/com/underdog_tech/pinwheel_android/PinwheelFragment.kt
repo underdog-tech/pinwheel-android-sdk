@@ -40,9 +40,9 @@ class PinwheelFragment : Fragment() {
     }
 
     private fun attachOnBackPressedCallback() {
-        val callback = object: OnBackPressedCallback(true) {
+        val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if(webView?.canGoBack() == true) {
+                if (webView?.canGoBack() == true) {
                     webView?.goBack()
                 } else {
                     isEnabled = false
@@ -63,10 +63,16 @@ class PinwheelFragment : Fragment() {
     }
 
     private fun enableFullscreenMode() {
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+        val activity = requireActivity()
+        if (activity is AppCompatActivity) {
+            activity.supportActionBar?.hide()
+        }
     }
 
     private fun disableFullscreenMode() {
-        (requireActivity() as AppCompatActivity).supportActionBar?.show()
+        val activity = requireActivity()
+        if (activity is AppCompatActivity) {
+            activity.supportActionBar?.show()
+        }
     }
 }
