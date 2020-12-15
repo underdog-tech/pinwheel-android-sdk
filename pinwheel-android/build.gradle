@@ -7,7 +7,7 @@ plugins {
 
 def libraryGroupId = 'com.underdog_tech.pinwheel'
 def libraryArtifactId = 'pinwheel-android'
-def libraryVersion = '1.0.3'
+def libraryVersion = '1.0.4'
 afterEvaluate {
     publishing {
         publications {
