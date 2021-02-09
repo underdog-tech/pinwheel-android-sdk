@@ -3,12 +3,9 @@ package com.underdog_tech.pinwheel_android.webview
 import android.webkit.JavascriptInterface
 import android.webkit.WebView
 import com.google.gson.Gson
+import com.google.gson.JsonObject
 import com.underdog_tech.pinwheel_android.PinwheelEventListener
-import com.underdog_tech.pinwheel_android.model.PinwheelActionEvent
-import com.underdog_tech.pinwheel_android.model.PinwheelEventType
-import com.underdog_tech.pinwheel_android.model.PinwheelExitEvent
-import com.underdog_tech.pinwheel_android.model.PinwheelSuccessEvent
-import org.json.JSONObject
+import com.underdog_tech.pinwheel_android.model.*
 
 class PinwheelJavaScriptInterface(private val pinwheelEventListener: PinwheelEventListener?) {
 
@@ -17,28 +14,75 @@ class PinwheelJavaScriptInterface(private val pinwheelEventListener: PinwheelEve
     @JavascriptInterface
     fun onLinkMessage(message: String) {
         pinwheelEventListener?.let {
-            val messageJSON = JSONObject(message)
-            when (messageJSON.getString("type")) {
-                PinwheelEventType.PINWHEEL_EVENT -> sendPinwheelActionEvent(message, it)
-                PinwheelEventType.PINWHEEL_SUCCESS -> sendPinwheelSuccessEvent(message, it)
-                PinwheelEventType.PINWHEEL_MODAL_CLOSE -> sendPinwheelExitEvent(message, it)
+            val messageJson = gson.fromJson(message, JsonObject::class.java)
+            val type: String = messageJson.get("type").asString
+
+            if (type == EVENT_MESSAGE) {
+                val eventName: String = messageJson.get("eventName").asString
+                val payload: JsonObject = messageJson.getAsJsonObject("payload")
+
+                when (eventName) {
+                    "open" -> {
+                        it.onEvent(PinwheelEventType.OPEN, null)
+                    }
+                    "select_employer" -> {
+                        it.onEvent(
+                            PinwheelEventType.SELECT_EMPLOYER,
+                            gson.fromJson(payload, PinwheelSelectedEmployerPayload::class.java)
+                        )
+                    }
+                    "select_platform" -> {
+                        it.onEvent(
+                            PinwheelEventType.SELECT_PLATFORM,
+                            gson.fromJson(payload, PinwheelSelectedPlatformPayload::class.java)
+                        )
+                    }
+                    "input_amount" -> {
+                        it.onEvent(PinwheelEventType.INPUT_AMOUNT, gson.fromJson(
+                            payload,
+                            PinwheelAmount::class.java)
+                        )
+                    }
+                    "exit" -> {
+                        var error: PinwheelError? = null;
+
+                        if (payload.has("error")) {
+                            error = gson.fromJson(payload, PinwheelError::class.java)
+                        }
+
+                        it.onEvent(PinwheelEventType.EXIT, error)
+                        it.onExit(error)
+                    }
+                    "success" -> {
+                        val result: PinwheelResult = gson.fromJson(
+                            payload,
+                            PinwheelResult::class.java
+                        )
+                        it.onEvent(PinwheelEventType.SUCCESS, result)
+                        it.onSuccess(result)
+                    }
+                    "login" -> {
+                        val result: PinwheelLoginPayload = gson.fromJson(
+                            payload,
+                            PinwheelLoginPayload::class.java
+                        )
+                        it.onEvent(PinwheelEventType.LOGIN, result)
+                        it.onLogin(result)
+                    }
+                    "error" -> {
+                        val error: PinwheelError = gson.fromJson(
+                            payload,
+                            PinwheelError::class.java
+                        )
+                        it.onEvent(PinwheelEventType.ERROR, error)
+                        it.onError(error)
+                    }
+                    "incorrect_platform_given" -> {
+                        it.onEvent(PinwheelEventType.INCORRECT_PLATFORM_GIVEN, null)
+                    }
+                }
             }
         }
-    }
-
-    private fun sendPinwheelActionEvent(message: String, callback: PinwheelEventListener) {
-        val actionEvent = gson.fromJson(message, PinwheelActionEvent::class.java)
-        callback.onEvent(actionEvent)
-    }
-
-    private fun sendPinwheelSuccessEvent(message: String, callback: PinwheelEventListener) {
-        val successEvent = gson.fromJson(message, PinwheelSuccessEvent::class.java)
-        callback.onSuccess(successEvent)
-    }
-
-    private fun sendPinwheelExitEvent(message: String, callback: PinwheelEventListener) {
-        val exitEvent = gson.fromJson(message, PinwheelExitEvent::class.java)
-        callback.onExit(exitEvent)
     }
 
     fun bind(webView: WebView) {

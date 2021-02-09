@@ -9,9 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.underdog_tech.pinwheel_android.PinwheelEventListener
 import com.underdog_tech.pinwheel_android.PinwheelFragment
-import com.underdog_tech.pinwheel_android.model.PinwheelActionEvent
-import com.underdog_tech.pinwheel_android.model.PinwheelExitEvent
-import com.underdog_tech.pinwheel_android.model.PinwheelSuccessEvent
+import com.underdog_tech.pinwheel_android.model.*
 import com.underdog_tech.pinwheel_android_demo.R
 import com.underdog_tech.pinwheel_android_demo.databinding.MainFragmentBinding
 import kotlinx.android.synthetic.main.main_fragment.*
@@ -54,18 +52,26 @@ class MainFragment : Fragment(), PinwheelEventListener {
         }
     }
 
-    override fun onSuccess(successEvent: PinwheelSuccessEvent) {
-        Timber.d("ON COMPLETE")
+    override fun onSuccess(result: PinwheelResult) {
+        Timber.d("ON COMPLETE: %s", result)
     }
 
-    override fun onExit(exitEvent: PinwheelExitEvent) {
-        Timber.d("ON EXIT")
+    override fun onLogin(result: PinwheelLoginPayload) {
+        Timber.d("ON LOGIN: %s", result)
+    }
+
+    override fun onError(error: PinwheelError) {
+        Timber.d("ON ERROR: %s", error)
+    }
+
+    override fun onExit(error: PinwheelError?) {
+        Timber.d("ON EXIT: %s", error)
         parentFragmentManager.popBackStack()
         Toast.makeText(context, "Pinwheel On Exit Event Fired", Toast.LENGTH_LONG).show()
     }
 
-    override fun onEvent(actionEvent: PinwheelActionEvent) {
-        Timber.d("ON EVENT")
+    override fun onEvent(eventName: PinwheelEventType, payload: PinwheelEventPayload?) {
+        Timber.d("ON EVENT: %s %s", eventName, payload)
     }
 
 }
