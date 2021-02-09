@@ -53,7 +53,7 @@ class MainFragment : Fragment(), PinwheelEventListener {
     }
 
     override fun onSuccess(result: PinwheelResult) {
-        Timber.d("ON COMPLETE: %s", result)
+        Timber.d("ON SUCCESS: %s", result)
     }
 
     override fun onLogin(result: PinwheelLoginPayload) {
