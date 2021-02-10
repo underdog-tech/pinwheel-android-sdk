@@ -2,15 +2,22 @@ package com.underdog_tech.pinwheel_android.webview
 
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import com.underdog_tech.pinwheel_android.model.DeviceMetadata
+import com.underdog_tech.pinwheel_android.BuildConfig
+import com.underdog_tech.pinwheel_android.model.ClientMetadata
 
-class PinwheelWebViewClient(private val linkToken: String, private val uuid: String, private val timestamp: Long, private val metaData: DeviceMetadata): WebViewClient() {
+class PinwheelWebViewClient(
+    private val linkToken: String,
+    private val uuid: String,
+    private val timestamp: Long,
+    private val metaData: ClientMetadata
+): WebViewClient() {
 
     override fun onPageFinished(view: WebView?, url: String?) {
         view?.let { injectJS(it) }
     }
 
     private fun injectJS(view: WebView) {
+        val version = BuildConfig.LIBRARY_VERSION.split(".")
         val script =
             """try {
                   window.addEventListener('message', event => {
@@ -20,8 +27,11 @@ class PinwheelWebViewClient(private val linkToken: String, private val uuid: Str
                             {
                                 type: 'PINWHEEL_INIT',
                                 payload: {
-                                    fullScreen: true,
+                                    linkToken: '$linkToken',
+                                    uniqueUserId: '$uuid',
+                                    initializationTimestamp: $timestamp,
                                     sdk: 'android',
+                                    platform: 'android',
                                     deviceMetadata: {
                                         os: ${metaData.os},
                                         manufacturer: '${metaData.manufacturer}',
@@ -30,9 +40,18 @@ class PinwheelWebViewClient(private val linkToken: String, private val uuid: Str
                                         device: '${metaData.device}',
                                         hardware: '${metaData.hardware}',
                                     },
-                                    initializationTimestamp: $timestamp,
-                                    linkToken: '$linkToken',
-                                    uniqueUserId: '$uuid',
+                                    version: {
+                                        major: ${version[0]},
+                                        ${if (version.size > 1) { "minor: " + version[1] } else { "" }},
+                                        ${if (version.size > 2) { "patch: " + version[2] } else { "" }},
+                                    },
+                                    initializationOptions: {
+                                        hasOnSuccess: ${metaData.hasOnSuccess},
+                                        hasOnEvent: ${metaData.hasOnEvent},
+                                        hasOnExit: ${metaData.hasOnExit},
+                                        hasOnError: ${metaData.hasOnError},
+                                        hasOnLogin: ${metaData.hasOnLogin},
+                                    }
                                  }
                             }
                   );
