@@ -1,14 +1,15 @@
 package com.underdog_tech.pinwheel_android
 
-import com.underdog_tech.pinwheel_android.model.PinwheelActionEvent
-import com.underdog_tech.pinwheel_android.model.PinwheelExitEvent
-import com.underdog_tech.pinwheel_android.model.PinwheelSuccessEvent
+import com.underdog_tech.pinwheel_android.model.*
 
 interface PinwheelEventListener {
+    fun onLogin(result: PinwheelLoginPayload) {}
 
-    fun onSuccess(successEvent: PinwheelSuccessEvent)
+    fun onSuccess(result: PinwheelResult) {}
 
-    fun onExit(exitEvent: PinwheelExitEvent)
+    fun onError(error: PinwheelError) {}
 
-    fun onEvent(actionEvent: PinwheelActionEvent)
+    fun onExit(error: PinwheelError?) {}
+
+    fun onEvent(eventName: PinwheelEventType, payload: PinwheelEventPayload?) {}
 }
