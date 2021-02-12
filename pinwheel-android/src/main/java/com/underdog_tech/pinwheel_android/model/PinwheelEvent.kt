@@ -23,14 +23,14 @@ data class PinwheelAmount(
     val unit: String,
 ): PinwheelEventPayload
 
-data class PinwheelUserSelectedParameters(
+data class PinwheelParams(
     val amount: PinwheelAmount? = null,
 )
 
 data class PinwheelResult(
     val accountId: String,
     val job: String,
-    val userSelectedParameters: PinwheelUserSelectedParameters,
+    val params: PinwheelParams,
 ): PinwheelEventPayload
 
 data class PinwheelError(
