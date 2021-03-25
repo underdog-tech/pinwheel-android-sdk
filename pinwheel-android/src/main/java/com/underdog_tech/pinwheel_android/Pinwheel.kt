@@ -12,7 +12,7 @@ import kotlin.reflect.full.memberFunctions
 
 object Pinwheel {
 
-    const val CDN_URL= "https://cdn.getpinwheel.com/link-v2.2.0.html"
+    const val CDN_URL= "https://cdn.getpinwheel.com/link-v3.0.0-beta.html"
 
     fun init(webView: WebView, linkToken: String, callback: PinwheelEventListener?) {
         val timestamp = getUnixTimestamp()

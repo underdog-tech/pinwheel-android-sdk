@@ -37,7 +37,6 @@ data class PinwheelError(
     val type: String,
     val code: String,
     val message: String,
-    val pendingRetry: Boolean,
 ): PinwheelEventPayload
 
 data class PinwheelSelectedEmployerPayload(
