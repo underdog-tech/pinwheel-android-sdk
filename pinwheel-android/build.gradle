@@ -7,7 +7,7 @@ plugins {
 
 def libraryGroupId = 'com.underdog_tech.pinwheel'
 def libraryArtifactId = 'pinwheel-android'
-def libraryVersion = '2.2.1'
+def libraryVersion = '2.2.4'
 afterEvaluate {
     publishing {
         publications {
@@ -22,27 +22,7 @@ afterEvaluate {
     }
 }
 
-bintray {
-    user = project.property('BINTRAY_USER')
-    key = project.property('BINTRAY_KEY')
-    publications = ['release']
-    publish = true
-    override = true
-    pkg {
-        repo = 'pinwheel-android-sdk'
-        name = libraryArtifactId
-        desc = 'Pinwheel Android SDK'
-        userOrg = 'underdog-technologies'
-        licenses = ['MIT']
-        vcsUrl = 'https://github.com/underdog-tech/androidSDKDemo'
-        publish = true
-        publicDownloadNumbers = true
-        version {
-            name = libraryVersion
-            released = new Date()
-        }
-    }
-}
+apply from: file('publish.gradle')
 
 android {
     compileSdkVersion 30

@@ -98,3 +98,6 @@ gradle-app.setting
 
 
 app/libs/\.DS_Store
+debug.keystore
+github.properties
+app/keystore.properties
