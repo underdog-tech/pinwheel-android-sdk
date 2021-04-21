@@ -66,11 +66,6 @@ references:
       name: Create Google Play Key
       command: echo $GOOGLE_PLAY_KEY > google-play-key.json
 
-  create_github_credentials: &create_bintray_credentials
-    run:
-      name: Create Bintray Credentials
-      command: printf 'gpr.usr=%s\gpr.key=%s' \ $GPR_USER $GPR_API_KEY > github.properties
-
 jobs:
 
   test_unit:

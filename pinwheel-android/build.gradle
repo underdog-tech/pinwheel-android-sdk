@@ -7,8 +7,6 @@ plugins {
 def libraryGroupId = 'com.underdog_tech.pinwheel'
 def libraryArtifactId = 'pinwheel-android'
 def libraryVersion = '2.3.0'
-def githubProperties = new Properties()
-githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
 
 afterEvaluate {
     publishing {
@@ -17,8 +15,8 @@ afterEvaluate {
                 name = "GitHubPackages"
                 url = uri("https://maven.pkg.github.com/underdog-tech/pinwheel-android-sdk")
                 credentials {
-                    username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
-                    password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+                    username = System.getenv("GPR_USER")
+                    password = System.getenv("GPR_API_KEY")
                 }
             }
         }
