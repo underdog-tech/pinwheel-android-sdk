@@ -163,7 +163,6 @@ workflows:
             branches:
               only:
                 - release
-                - robby/github-packages
           requires:
             - test_unit
 
