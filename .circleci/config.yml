@@ -159,7 +159,7 @@ jobs:
           command: |
             VERSION=$(cat pinwheel-android/build.gradle | grep 'def libraryVersion' | cut -d"'" -f 2)
             echo ${VERSION}
-            ghr -t ${GPR_API_KEY} ${VERSION} .
+            ghr -t ${GPR_API_KEY} -delete ${VERSION} .
 
 workflows:
   version: 2
