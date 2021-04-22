@@ -189,3 +189,5 @@ workflows:
               only:
                 - release
                 - robby/github-releases
+          requires:
+            - test_unit
