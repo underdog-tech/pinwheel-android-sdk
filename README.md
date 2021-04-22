@@ -110,7 +110,7 @@ Optional callback for when an error occurs.
 
 ## Example
 
-An example project is provided in the app directory. Add your API secret to `gradle.properties` file. In your app, you should fetch the Link token from your server, and you should never include your API secret in your app.
+An example project is provided in the app directory. Add your API secret to `gradle.properties`. This is done purely for ease of testing the sample app. In your production app, you should fetch the Link token from your server, and you should never include your API secret in your app.
 
 ## Author
 
