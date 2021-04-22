@@ -1,3 +1,2 @@
 include ':pinwheel-android'
-include ':app'
 rootProject.name = "link-android-sdk"

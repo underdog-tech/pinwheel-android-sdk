@@ -144,6 +144,23 @@ jobs:
           name: Publish to GitHub
           command: ./gradlew publish
 
+  github_release:
+    working_directory: *workspace
+    docker:
+      - image: cimg/go:1.16.3
+    steps:
+      - checkout
+      - run:
+          name: "Install ghr"
+          command: |
+            go get github.com/tcnksm/ghr
+      - run:
+          name: "Publish Release on GitHub"
+          command: |
+            VERSION=$(cat pinwheel-android/build.gradle | grep 'def libraryVersion' | cut -d"'" -f 2)
+            echo ${VERSION}
+            ghr -t ${GPR_API_KEY} ${VERSION} .
+
 workflows:
   version: 2
   workflow:
@@ -166,3 +183,9 @@ workflows:
           requires:
             - test_unit
 
+      - github_release:
+          filters:
+            branches:
+              only:
+                - release
+                - robby/github-releases
