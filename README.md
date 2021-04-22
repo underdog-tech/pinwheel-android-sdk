@@ -68,8 +68,6 @@ implementation 'com.underdog_tech.pinwheel:pinwheel-android:2.3.0'
 
 5. Sync your Android gradle project and the library should be ready to use.
 
-
-
 ### PinwheelFragment
 
 To initialize the `PinwheelFragment`, a short-lived Link token will need to be generated first. Your mobile app should fetch the Link token from your server. DO NOT ever send this request from the client side and publicly expose your `api_secret`. 
