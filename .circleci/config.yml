@@ -167,14 +167,6 @@ workflows:
     jobs:
       - test_unit
 
-      - beta_deployment:
-          filters:
-            branches:
-              only:
-                - main
-          requires:
-            - test_unit
-
       - github_publish:
           filters:
             branches:
