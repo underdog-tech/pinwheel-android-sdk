@@ -14,7 +14,7 @@ The Pinwheel Android SDK is available via [JitPack](https://jitpack.io/#underdog
 
 #### JitPack
 To install the SDK using JitPack:
-1. Add JitPack to your app's `build.gradle` file:
+1. Add  the JitPack url to your app's `build.gradle` file:
 ```gradle
 repositories {
     maven {
@@ -63,7 +63,9 @@ repositories {
 
 4. Add the package to your dependencies:
 ```gradle
-implementation 'com.underdog_tech.pinwheel:pinwheel-android:2.3.0'
+dependencies {
+    implementation 'com.underdog_tech.pinwheel:pinwheel-android:2.3.0'
+}
 ```
 
 5. Sync your Android gradle project and the library should be ready to use.
