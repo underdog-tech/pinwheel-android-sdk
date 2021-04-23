@@ -100,29 +100,6 @@ jobs:
       - store_test_results:
           path: pinwheel-android/build/test-results/
 
-  beta_deployment:
-    <<: *android_config
-
-    steps:
-      - checkout
-      - *restore_gradle_cache
-      - *restore_gems_cache
-      - *ruby_dependencies
-      - *create_keystore_properties
-      - *decode_android_key
-      - *android_dependencies
-      - *save_gradle_cache
-      - *save_gems_cache
-      - *create_google_play_key
-
-      - run:
-          name: Deploy to Play Store
-          command: bundle exec fastlane beta
-
-      - store_artifacts:
-          path: app/build/outputs/mapping
-          destination: /mapping/
-
   github_publish:
     <<: *android_config
 
