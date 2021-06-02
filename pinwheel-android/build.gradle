@@ -6,7 +6,7 @@ plugins {
 
 def libraryGroupId = 'com.underdog_tech.pinwheel'
 def libraryArtifactId = 'pinwheel-android'
-def libraryVersion = '2.3.0'
+def libraryVersion = '2.3.1'
 
 afterEvaluate {
     publishing {
@@ -53,7 +53,7 @@ android {
     defaultConfig {
         minSdkVersion 22
         targetSdkVersion 30
-        versionCode 5
+        versionCode 6
         versionName libraryVersion
         buildConfigField "String", "LIBRARY_VERSION", "\"${libraryVersion}\""
 
