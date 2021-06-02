@@ -1,5 +1,8 @@
 package com.underdog_tech.pinwheel_android.webview
 
+import android.content.Intent
+import android.net.Uri
+import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.underdog_tech.pinwheel_android.BuildConfig
@@ -14,6 +17,12 @@ class PinwheelWebViewClient(
 
     override fun onPageFinished(view: WebView?, url: String?) {
         view?.let { injectJS(it) }
+    }
+
+    override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
+        val i = Intent(Intent.ACTION_VIEW, Uri.parse(request.url.toString()))
+        view.context.startActivity(i)
+        return true
     }
 
     private fun injectJS(view: WebView) {
