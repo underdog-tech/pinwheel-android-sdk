@@ -52,6 +52,7 @@ data class PinwheelSelectedPlatformPayload(
 
 data class PinwheelLoginPayload(
     val accountId: String,
+    val platformId: String,
 ): PinwheelEventPayload
 
 
