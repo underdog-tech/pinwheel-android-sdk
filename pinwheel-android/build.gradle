@@ -4,11 +4,11 @@ plugins {
     id 'maven-publish'
 }
 
-def libraryVersion = '2.3.2'
+def libraryVersion = '2.3.3'
 
 ext {
     PUBLISH_GROUP_ID = 'com.getpinwheel'
-    PUBLISH_VERSION = '2.3.2'
+    PUBLISH_VERSION = libraryVersion
     PUBLISH_ARTIFACT_ID = 'pinwheel-android'
 }
 
