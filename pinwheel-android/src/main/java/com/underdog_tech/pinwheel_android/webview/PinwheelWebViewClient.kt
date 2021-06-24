@@ -62,7 +62,8 @@ class PinwheelWebViewClient(
                                         hasOnLogin: ${metaData.hasOnLogin},
                                     }
                                  }
-                            }
+                            },
+                            "*"
                   );
                   } catch(err) {
                     console.error(err);
