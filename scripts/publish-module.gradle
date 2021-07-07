@@ -65,7 +65,7 @@ afterEvaluate {
                     url = 'https://github.com/underdog-tech/pinwheel-android-sdk'
                     licenses {
                         license {
-                            name = 'Pinwheel License'
+                            name = 'MIT'
                             url = 'https://github.com/underdog-tech/pinwheel-android-sdk/blob/main/LICENSE'
                         }
                     }
