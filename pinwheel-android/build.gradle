@@ -20,7 +20,7 @@ android {
     defaultConfig {
         minSdkVersion 22
         targetSdkVersion 30
-        versionCode 6
+        versionCode 7
         versionName libraryVersion
         buildConfigField "String", "LIBRARY_VERSION", "\"${libraryVersion}\""
 
