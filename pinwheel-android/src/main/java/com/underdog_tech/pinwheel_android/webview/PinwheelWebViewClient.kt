@@ -53,13 +53,6 @@ class PinwheelWebViewClient(
                                         major: ${version[0]},
                                         ${if (version.size > 1) { "minor: " + version[1] } else { "" }},
                                         ${if (version.size > 2) { "patch: " + version[2] } else { "" }},
-                                    },
-                                    initializationOptions: {
-                                        hasOnSuccess: ${metaData.hasOnSuccess},
-                                        hasOnEvent: ${metaData.hasOnEvent},
-                                        hasOnExit: ${metaData.hasOnExit},
-                                        hasOnError: ${metaData.hasOnError},
-                                        hasOnLogin: ${metaData.hasOnLogin},
                                     }
                                  }
                             },

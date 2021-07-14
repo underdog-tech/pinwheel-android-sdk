@@ -7,9 +7,4 @@ data class ClientMetadata(
     val product: String,
     val device: String,
     val hardware: String,
-    val hasOnLogin: Boolean,
-    val hasOnSuccess: Boolean,
-    val hasOnError: Boolean,
-    val hasOnExit: Boolean,
-    val hasOnEvent: Boolean,
 )
