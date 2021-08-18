@@ -47,7 +47,7 @@ class PinwheelJavaScriptInterface(private val pinwheelEventListener: PinwheelEve
                         var error: PinwheelError? = null;
 
                         if (payload.has("error")) {
-                            error = gson.fromJson(payload, PinwheelError::class.java)
+                            error = gson.fromJson(payload.get("error"), PinwheelError::class.java)
                         }
 
                         it.onEvent(PinwheelEventType.EXIT, error)
