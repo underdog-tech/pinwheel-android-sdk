@@ -30,7 +30,7 @@ data class PinwheelParams(
 data class PinwheelResult(
     val accountId: String,
     val job: String,
-    val params: PinwheelParams,
+    val params: PinwheelParams?,
 ): PinwheelEventPayload
 
 data class PinwheelError(
