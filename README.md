@@ -24,7 +24,7 @@ repositories {
 2. Add the package to your dependencies:
 ```gradle
 dependencies {
-    implementation 'com.getpinwheel:pinwheel-android:2.3.9'
+    implementation 'com.getpinwheel:pinwheel-android:2.3.10'
 }
 ```
 
@@ -44,7 +44,7 @@ repositories {
 2. Add the package to your dependencies:
 ```gradle
 dependencies {
-    implementation 'com.github.underdog-tech:pinwheel-android-sdk:2.3.9'
+    implementation 'com.github.underdog-tech:pinwheel-android-sdk:2.3.10'
 }
 ```
 
@@ -82,7 +82,7 @@ repositories {
 4. Add the package to your dependencies:
 ```gradle
 dependencies {
-    implementation 'com.underdog_tech.pinwheel:pinwheel-android:2.3.9'
+    implementation 'com.underdog_tech.pinwheel:pinwheel-android:2.3.10'
 }
 ```
 
