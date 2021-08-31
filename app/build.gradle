@@ -17,7 +17,7 @@ android {
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 13
-        versionName "2.3.10"
+        versionName "2.3.11"
 
         buildConfigField "String", "API_SECRET", "\"${API_SECRET}\""
 
