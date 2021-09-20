@@ -13,6 +13,7 @@ buildscript {
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath 'io.github.gradle-nexus:publish-plugin:1.1.0'
         classpath 'org.jetbrains.dokka:dokka-gradle-plugin:1.4.32'
+        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5'
     }
 }
 

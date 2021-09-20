@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment2">
+
+    <fragment
+        android:id="@+id/mainFragment2"
+        android:name="com.underdog_tech.pinwheel_android_demo.ui.main.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment2_to_pinwheelFragment"
+            app:destination="@id/pinwheelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pinwheelFragment"
+        android:name="com.underdog_tech.pinwheel_android.PinwheelFragment"
+        android:label="PinwheelFragment" >
+        <argument
+            android:name="linkToken"
+            app:argType="string" />
+    </fragment>
+</navigation>

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.underdog_tech.pinwheel_android.PinwheelEventListener
 import com.underdog_tech.pinwheel_android.PinwheelFragment
 import com.underdog_tech.pinwheel_android.model.*
@@ -35,12 +36,9 @@ class MainFragment : Fragment(), PinwheelEventListener {
     }
 
     private fun navigateToTheLink(token: String) {
-        parentFragmentManager.let {
-            val transaction = it.beginTransaction()
-            val pinwheelFragment = PinwheelFragment.newInstance(token)
-            pinwheelFragment.pinwheelEventListener = this
-            transaction.replace(R.id.rootView, pinwheelFragment).addToBackStack("pinwheel").commit()
-        }
+        val action = MainFragmentDirections.actionMainFragment2ToPinwheelFragment(token)
+        val navController = findNavController()
+        navController.navigate(action)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -66,7 +64,8 @@ class MainFragment : Fragment(), PinwheelEventListener {
 
     override fun onExit(error: PinwheelError?) {
         Timber.d("ON EXIT: %s", error)
-        parentFragmentManager.popBackStack()
+        val navController = findNavController()
+        navController.popBackStack()
         Toast.makeText(context, "Pinwheel On Exit Event Fired", Toast.LENGTH_LONG).show()
     }
 
