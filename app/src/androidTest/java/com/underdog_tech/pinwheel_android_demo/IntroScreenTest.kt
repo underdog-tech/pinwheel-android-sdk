@@ -1,22 +1,24 @@
 package com.underdog_tech.pinwheel_android_demo
 
+import android.os.SystemClock
 import android.util.Log
 import android.webkit.WebView
+import androidx.test.espresso.Espresso.onData
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.espresso.web.sugar.Web.onWebView
 import androidx.test.espresso.web.webdriver.DriverAtoms.findElement
 import androidx.test.espresso.web.webdriver.DriverAtoms.webClick
 import androidx.test.espresso.web.webdriver.Locator
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.rule.ActivityTestRule
 import androidx.test.uiautomator.*
 import org.junit.*
 import org.junit.runner.RunWith
-import androidx.test.rule.ActivityTestRule
-
+import org.hamcrest.Matchers.*
 
 
 @RunWith(AndroidJUnit4::class)
@@ -46,13 +48,17 @@ class IntroScreenTest {
             .forceJavascriptEnabled()
             .withElement(findElement(Locator.XPATH, "//button[contains(@aria-label,\"Close Button\")]")) // similar to onView(withId(...))
             .withNoTimeout()
-            .perform(webClick()) // Similar to perform(click())
+            .perform(webClick())
 
         onWebView(withId(R.id.webView))
             .forceJavascriptEnabled()
             .withElement(findElement(Locator.XPATH, "//button[contains(@aria-label,\"Exit Confirmation Button\")]")) // similar to onView(withId(...))
             .withNoTimeout()
-            .perform(webClick()) // Similar to perform(click())
+            .perform(webClick())
+
+        onData(anything()).inAdapterView(withId(R.id.events_listview))
+            .atPosition(1)
+            .check(matches(withText("EXIT - null")))
     }
 
     /**
