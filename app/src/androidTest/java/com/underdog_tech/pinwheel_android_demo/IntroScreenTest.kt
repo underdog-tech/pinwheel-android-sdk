@@ -1,6 +1,5 @@
 package com.underdog_tech.pinwheel_android_demo
 
-import android.os.SystemClock
 import android.util.Log
 import android.webkit.WebView
 import androidx.test.espresso.Espresso.onView
@@ -42,8 +41,6 @@ class IntroScreenTest {
             .perform(click())
 
         device.wait(Until.findObject(By.clazz(WebView::class.java)), timeOut)
-
-//        SystemClock.sleep(5000);
 
         onWebView(withId(R.id.webView))
             .forceJavascriptEnabled()
