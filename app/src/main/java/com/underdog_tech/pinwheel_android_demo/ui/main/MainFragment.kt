@@ -12,12 +12,15 @@ import com.underdog_tech.pinwheel_android.PinwheelFragment
 import com.underdog_tech.pinwheel_android.model.*
 import com.underdog_tech.pinwheel_android_demo.R
 import com.underdog_tech.pinwheel_android_demo.databinding.MainFragmentBinding
+import com.underdog_tech.pinwheel_android_demo.repository.model.CapturedEvent
 import kotlinx.android.synthetic.main.main_fragment.*
 import timber.log.Timber
 
 class MainFragment : Fragment(), PinwheelEventListener {
 
     private lateinit var viewModel: MainViewModel
+
+    val capturedEvents = mutableListOf<CapturedEvent>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -68,9 +71,16 @@ class MainFragment : Fragment(), PinwheelEventListener {
         Timber.d("ON EXIT: %s", error)
         parentFragmentManager.popBackStack()
         Toast.makeText(context, "Pinwheel On Exit Event Fired", Toast.LENGTH_LONG).show()
+
+        parentFragmentManager.let {
+            val transaction = it.beginTransaction()
+            val eventsFragment = EventsFragment(capturedEvents)
+            transaction.replace(R.id.rootView, eventsFragment).addToBackStack("events").commit()
+        }
     }
 
     override fun onEvent(eventName: PinwheelEventType, payload: PinwheelEventPayload?) {
+        capturedEvents.add(CapturedEvent(eventName.toString(), payload.toString()))
         Timber.d("ON EVENT: %s %s", eventName, payload)
     }
 
