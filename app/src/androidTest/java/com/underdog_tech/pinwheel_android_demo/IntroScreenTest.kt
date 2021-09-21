@@ -1,7 +1,5 @@
 package com.underdog_tech.pinwheel_android_demo
 
-import android.os.SystemClock
-import android.util.Log
 import android.webkit.WebView
 import androidx.test.espresso.Espresso.onData
 import androidx.test.espresso.Espresso.onView
@@ -59,43 +57,5 @@ class IntroScreenTest {
         onData(anything()).inAdapterView(withId(R.id.events_listview))
             .atPosition(1)
             .check(matches(withText("EXIT - null")))
-    }
-
-    /**
-     * Run before the method with @Test annotation
-     */
-    @Before
-    fun before() {
-        Log.d(TAG, "Before")
-    }
-
-    /**
-     * Run after each method with @Test annotation
-     */
-    @After
-    fun after() {
-        Log.d(TAG, "After")
-    }
-
-    companion object {
-        private const val TAG = "UiAutomatorExample"
-
-        /**
-         * Run once before other methods from [UiAutomatorOrder] class
-         */
-        @JvmStatic
-        @BeforeClass
-        fun beforeClass() {
-            Log.d(TAG, "Before Class")
-        }
-
-        /**
-         * Run once after other methods from [UiAutomatorOrder] class
-         */
-        @JvmStatic
-        @AfterClass
-        fun afterClass() {
-            Log.d(TAG, "After Class")
-        }
     }
 }
