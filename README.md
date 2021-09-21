@@ -128,7 +128,7 @@ Optional callback for when an error occurs.
 
 ## Example
 
-An example project is provided in the app directory. Add `include ':app'` to `settings.gradle`. Also add your API secret to `gradle.properties`. This is done purely for ease of testing the sample app. In your production app, you should fetch the Link token from your server, and you should never include your API secret in your app.
+An example project is provided in the app directory. Add `include ':app'` to `settings.gradle`. Add your API secret as a global gradle property, `PINWHEEL_API_SECRET` in `$USER_HOME/.gradle/gradle.properties`. This is done purely for ease of testing the sample app. In your production app, you should fetch the Link token from your server, and you should never include your API secret in your app.
 
 ### Make Feature
 
