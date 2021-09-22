@@ -38,7 +38,7 @@ class EventsFragment(val capturedEvents: MutableList<CapturedEvent>) : Fragment(
             return position.toLong()
         }
         override fun getItem(position: Int): String {
-            return mEvents.get(position).eventName.toString()
+            return mEvents[position].eventName.toString()
         }
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             var tv = TextView(mContext)
