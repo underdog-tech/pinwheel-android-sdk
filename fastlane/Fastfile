@@ -43,5 +43,22 @@ platform :android do
         apk: Actions.lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
     )
   end
+
+  desc "Run tests on AWS Device Farm"
+  lane :aws_device_run_android do
+    ENV['AWS_REGION']            = 'us-west-2'
+  
+    #Build Debug App + Instrumentation Apk
+    gradle(task: 'assembleDebug')
+    gradle(task: 'assembleAndroidTest')
+  
+    # RUN tests on AWS Device Farm
+    aws_device_farm(
+      name:                 'pinwheel-android',
+      device_pool:          'android-devices',
+      binary_path:          'app/build/outputs/apk/dev/debug/app-dev-debug.apk',
+      test_binary_path:     'app/build/outputs/apk/androidTest/dev/debug/app-dev-debug-androidTest.apk'
+    )
+  end
 end
 

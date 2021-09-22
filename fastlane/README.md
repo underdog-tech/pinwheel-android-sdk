@@ -31,6 +31,11 @@ Run Unit Tests
 fastlane android beta
 ```
 Beta Deployment
+### android aws_device_run_android
+```
+fastlane android aws_device_run_android
+```
+Run tests on AWS Device Farm
 
 ----
 
