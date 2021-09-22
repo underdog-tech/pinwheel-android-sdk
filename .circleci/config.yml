@@ -99,6 +99,42 @@ jobs:
 
       - store_test_results:
           path: pinwheel-android/build/test-results/
+  
+  test_ui:
+    <<: *android_config
+
+    steps:
+      - checkout
+      - *restore_gradle_cache
+      - *restore_gems_cache
+      - *ruby_dependencies
+      - *create_keystore_properties
+      - *decode_android_key
+      - *android_dependencies
+      - *save_gradle_cache
+      - *save_gems_cache
+
+      - run:
+          name: Run unit tests
+          command: ./gradlew pinwheel-android:test
+
+      - run: 
+          name: Run UI tests
+          command: bundle exec fastlane ios aws_device_run_ios # Run ui tests using Fastlane
+
+      - store_artifacts:
+          path: app/build/reports/
+          destination: /reports/
+
+      - store_artifacts:
+          path: pinwheel-android/build/reports/
+          destination: /reports/
+
+      - store_test_results:
+          path: app/build/test-results/
+
+      - store_test_results:
+          path: pinwheel-android/build/test-results/
 
   github_publish:
     <<: *android_config
@@ -143,6 +179,8 @@ workflows:
   workflow:
     jobs:
       - test_unit
+
+      - test_ui
 
       - github_publish:
           filters:
