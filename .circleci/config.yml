@@ -79,7 +79,6 @@ jobs:
     steps:
       - checkout
       - *restore_gradle_cache
-      - *add_gradle_properties
       - *restore_gems_cache
       - *ruby_dependencies
       - *create_keystore_properties
@@ -112,7 +111,6 @@ jobs:
     steps:
       - checkout
       - *restore_gradle_cache
-      - *add_gradle_properties
       - *restore_gems_cache
       - *ruby_dependencies
       - *create_keystore_properties
