@@ -10,7 +10,7 @@ The Pinwheel Android SDK's main interface is a `Fragment` that you can integrate
 
 ### Installation
 
-The Pinwheel Android SDK is available via [Maven Central Repository](https://search.maven.org/artifact/com.getpinwheel/pinwheel-android), [JitPack](https://jitpack.io/#underdog-tech/pinwheel-android-sdk), and [GitHub Packages](https://github.com/underdog-tech/pinwheel-android-sdk/packages/719840).
+The Pinwheel Android SDK is available via [Maven Central Repository](https://search.maven.org/artifact/com.getpinwheel/pinwheel-android), and [GitHub Packages](https://github.com/underdog-tech/pinwheel-android-sdk/packages/719840).
 
 #### Maven Central Repository
 To install the SDK using the Maven Central Repository
