@@ -114,13 +114,9 @@ jobs:
       - *save_gradle_cache
       - *save_gems_cache
 
-      - run:
-          name: Run unit tests
-          command: ./gradlew pinwheel-android:test
-
       - run: 
           name: Run UI tests
-          command: bundle exec fastlane ios aws_device_run_ios # Run ui tests using Fastlane
+          command: bundle exec fastlane aws_device_run_android # Run ui tests using Fastlane
 
       - store_artifacts:
           path: app/build/reports/
