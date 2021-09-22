@@ -30,26 +30,6 @@ dependencies {
 
 3. Sync your Android gradle project and the library should be ready to use.
 
-#### JitPack
-To install the SDK using JitPack:
-1. Add  the JitPack url to your app's `build.gradle` file:
-```gradle
-repositories {
-    maven {
-        url 'https://jitpack.io'
-    }
-}
-```
-
-2. Add the package to your dependencies:
-```gradle
-dependencies {
-    implementation 'com.github.underdog-tech:pinwheel-android-sdk:2.3.11'
-}
-```
-
-3. Sync your Android gradle project and the library should be ready to use.
-
 
 #### GitHub Package
 To install the SDK using GitHub packages:
