@@ -33,11 +33,6 @@ references:
         - ~/.gradle
         - ~/.m2
 
-  add_gradle_properties: &add_gradle_properties
-    run: 
-      name: Add gradle global properties
-      command: echo PINWHEEL_API_SECRET=$PINWHEEL_API_SECRET > ~/.gradle/gradle.properties
-
   save_gems_cache: &save_gems_cache
     save_cache:
       key: *gems_key
