@@ -84,7 +84,7 @@ jobs:
 
       - run:
           name: Run unit tests
-          command: ./gradlew test
+          command: ./gradlew pinwheel-android:test
 
       - store_artifacts:
           path: app/build/reports/
