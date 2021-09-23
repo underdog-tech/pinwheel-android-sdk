@@ -19,7 +19,7 @@ android {
         versionCode 13
         versionName "2.3.11"
 
-        buildConfigField 'String', 'API_SECRET', "\" + PINWHEEL_API_SECRET + \""
+        buildConfigField 'String', 'API_SECRET', PINWHEEL_API_SECRET
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
