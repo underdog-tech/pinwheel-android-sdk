@@ -69,6 +69,14 @@ class PinwheelJavaScriptInterface(private val pinwheelEventListener: PinwheelEve
                         it.onEvent(PinwheelEventType.LOGIN, result)
                         it.onLogin(result)
                     }
+                    "login_attempt" -> {
+                        val result: PinwheelLoginAttemptPayload = gson.fromJson(
+                            payload,
+                            PinwheelLoginAttemptPayload::class.java
+                        )
+                        it.onEvent(PinwheelEventType.LOGIN_ATTEMPT, result)
+                        it.onLoginAttempt(result)
+                    }
                     "error" -> {
                         val error: PinwheelError = gson.fromJson(
                             payload,

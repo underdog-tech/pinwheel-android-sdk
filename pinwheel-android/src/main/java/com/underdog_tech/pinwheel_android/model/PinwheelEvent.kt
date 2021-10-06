@@ -12,6 +12,7 @@ enum class PinwheelEventType {
     EXIT,
     SUCCESS,
     LOGIN,
+    LOGIN_ATTEMPT,
     ERROR,
     INCORRECT_PLATFORM_GIVEN
 }
@@ -52,6 +53,10 @@ data class PinwheelSelectedPlatformPayload(
 
 data class PinwheelLoginPayload(
     val accountId: String,
+    val platformId: String,
+): PinwheelEventPayload
+
+data class PinwheelLoginAttemptPayload(
     val platformId: String,
 ): PinwheelEventPayload
 

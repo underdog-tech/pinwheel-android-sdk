@@ -5,6 +5,8 @@ import com.underdog_tech.pinwheel_android.model.*
 interface PinwheelEventListener {
     fun onLogin(result: PinwheelLoginPayload) {}
 
+    fun onLoginAttempt(result: PinwheelLoginAttemptPayload) {}
+
     fun onSuccess(result: PinwheelResult) {}
 
     fun onError(error: PinwheelError) {}
