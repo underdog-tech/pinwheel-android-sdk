@@ -63,6 +63,10 @@ class MainFragment : Fragment(), PinwheelEventListener {
         Timber.d("ON LOGIN: %s", result)
     }
 
+    override fun onLoginAttempt(result: PinwheelLoginAttemptPayload) {
+        Timber.d("ON LOGIN ATTEMPT: %s", result)
+    }
+
     override fun onError(error: PinwheelError) {
         Timber.d("ON ERROR: %s", error)
     }
