@@ -43,6 +43,9 @@ class PinwheelJavaScriptInterface(private val pinwheelEventListener: PinwheelEve
                             PinwheelAmount::class.java)
                         )
                     }
+                    "input_required" -> {
+                        it.onEvent(PinwheelEventType.INPUT_REQUIRED, null)
+                    }
                     "exit" -> {
                         var error: PinwheelError? = null;
 

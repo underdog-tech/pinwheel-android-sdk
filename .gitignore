@@ -106,3 +106,4 @@ env-vars.sh
 # Fastlane
 fastlane/report.xml
 
+.vscode
