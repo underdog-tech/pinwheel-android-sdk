@@ -9,6 +9,7 @@ enum class PinwheelEventType {
     SELECT_EMPLOYER,
     SELECT_PLATFORM,
     INPUT_AMOUNT,
+    INPUT_REQUIRED,
     EXIT,
     SUCCESS,
     LOGIN,
