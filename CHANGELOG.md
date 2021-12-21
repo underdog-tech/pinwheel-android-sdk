@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-### 2.3.14
+### [2.3.14](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.3.14)
 
 #### Added
 
