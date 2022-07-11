@@ -9,6 +9,7 @@ enum class PinwheelEventType {
     SELECT_EMPLOYER,
     SELECT_PLATFORM,
     INPUT_AMOUNT,
+    INPUT_ALLOCATION,
     INPUT_REQUIRED,
     EXIT,
     SUCCESS,
@@ -23,6 +24,16 @@ const val EVENT_MESSAGE = "PINWHEEL_EVENT"
 data class PinwheelAmount(
     val value: Float,
     val unit: String,
+): PinwheelEventPayload
+
+data class PinwheelAllocation(
+    val type: String,
+    val value: Float?,
+)
+
+data class PinwheelInputAmountPayload(
+    val action: String,
+    val allocation: PinwheelAllocation?,
 ): PinwheelEventPayload
 
 data class PinwheelParams(
