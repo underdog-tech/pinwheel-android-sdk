@@ -19,9 +19,7 @@ android {
 
     defaultConfig {
         minSdkVersion 22
-        targetSdkVersion 30
-        versionCode 7
-        versionName libraryVersion
+        targetSdkVersion 31
         buildConfigField "String", "LIBRARY_VERSION", "\"${libraryVersion}\""
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
