@@ -17,7 +17,7 @@ android {
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 13
-        versionName "2.3.15"
+        versionName "2.3.16"
 
         buildConfigField 'String', 'API_SECRET', PINWHEEL_API_SECRET
 
