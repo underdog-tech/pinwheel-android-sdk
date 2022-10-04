@@ -26,9 +26,15 @@ data class PinwheelAmount(
     val unit: String,
 ): PinwheelEventPayload
 
+data class PinwheelTarget(
+    val accountType: String,
+    val accountName: String?,
+)
+
 data class PinwheelAllocation(
     val type: String,
     val value: Float?,
+    val target: PinwheelTarget?,
 )
 
 data class PinwheelInputAmountPayload(
