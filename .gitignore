@@ -107,3 +107,6 @@ env-vars.sh
 fastlane/report.xml
 
 .vscode
+
+# Phylum Integration
+.phylum_project
