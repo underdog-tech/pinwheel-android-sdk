@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
 }
 
-def libraryVersion = '2.3.16'
+def libraryVersion = '2.3.17'
 
 ext {
     PUBLISH_GROUP_ID = 'com.getpinwheel'

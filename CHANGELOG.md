@@ -4,9 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## 2.3.x Releases
 
-- `2.3.x` Releases - [2.3.16](#2316)
+- `2.3.x` Releases - [2.3.17](#2317)
 
 ---
+
+### [2.3.17](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.3.17)
+
+#### Adding new payload for the PinwheelEventType.INPUT_ALLOCATION event.
+
 
 ### [2.3.16](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.3.16)
 
