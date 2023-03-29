@@ -22,6 +22,7 @@ object Pinwheel {
     @SuppressLint("SetJavaScriptEnabled")
     private fun configureWebView(webView: WebView, linkToken: String, uuid: String, timestamp: Long, callback: PinwheelEventListener?) {
         webView.settings.javaScriptEnabled = true
+        webView.settings.domStorageEnabled = true
         webView.webViewClient = PinwheelWebViewClient(linkToken, uuid, timestamp, getClientMetadata())
         val pinwheelJSInterface = PinwheelJavaScriptInterface(callback)
         pinwheelJSInterface.bind((webView))
