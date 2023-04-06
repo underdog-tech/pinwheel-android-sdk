@@ -100,6 +100,18 @@ class PinwheelJavaScriptInterface(private val pinwheelEventListener: PinwheelEve
                     "card_switch_begin" -> {
                         it.onEvent(PinwheelEventType.CARD_SWITCH_BEGIN, null)
                     }
+                    "dd_form_begin" -> {
+                        it.onEvent(PinwheelEventType.DD_FORM_BEGIN, null)
+                    }
+                    "dd_form_create" -> {
+                        it.onEvent(
+                            PinwheelEventType.DD_FORM_CREATE,
+                            gson.fromJson(payload, PinwheelDDFormCreatePayload::class.java)
+                        )
+                    }
+                    "dd_form_download" -> {
+                        it.onEvent(PinwheelEventType.DD_FORM_DOWNLOAD, null)
+                    }
                 }
             }
         }
