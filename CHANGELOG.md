@@ -4,9 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## 2.3.x Releases
 
-- `2.3.x` Releases - [2.3.17](#2317)
+- `2.3.x` Releases - [2.3.18](#2318)
 
 ---
+
+### [2.3.18](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.3.18)
+
+#### Enables the DOM storage setting as Link leverages localStorage.
 
 ### [2.3.17](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.3.17)
 
@@ -23,7 +27,7 @@ All notable changes to this project will be documented in this file.
 #### Added
 
 - PinwheelEventType.INPUT_ALLOCATION
-  - Added by [Robby Abaya](https://github.com/rawbee) in Pull Request [#67](https://github.com/underdog-tech/pinwheel-android-sdk/pull/75).
+  - Added by [Robby Abaya](https://github.com/rawbee) in Pull Request [#75](https://github.com/underdog-tech/pinwheel-android-sdk/pull/75).
 
 ### [2.3.14](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.3.14)
 
