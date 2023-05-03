@@ -97,6 +97,9 @@ class PinwheelJavaScriptInterface(private val pinwheelEventListener: PinwheelEve
                     "incorrect_platform_given" -> {
                         it.onEvent(PinwheelEventType.INCORRECT_PLATFORM_GIVEN, null)
                     }
+                    "card_switch_begin" -> {
+                        it.onEvent(PinwheelEventType.CARD_SWITCH_BEGIN, null)
+                    }
                 }
             }
         }
