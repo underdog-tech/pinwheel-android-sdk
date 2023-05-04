@@ -21,6 +21,7 @@ enum class PinwheelEventType {
     DD_FORM_BEGIN,
     DD_FORM_CREATE,
     DD_FORM_DOWNLOAD,
+    SCREEN_TRANSITION,
 }
 
 const val EVENT_MESSAGE = "PINWHEEL_EVENT"
@@ -87,4 +88,10 @@ data class PinwheelDDFormCreatePayload(
     val url: String,
 ): PinwheelEventPayload
 
-
+data class PinwheelScreenTransitionPayload(
+    val screenName: String,
+    val selectedEmployerId: String?,
+    val selectedEmployerName: String?,
+    val selectedPlatformId: String?,
+    val selectedPlatformName: String?,
+): PinwheelEventPayload
