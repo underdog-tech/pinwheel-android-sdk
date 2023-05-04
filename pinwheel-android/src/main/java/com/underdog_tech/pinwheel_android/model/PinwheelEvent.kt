@@ -18,6 +18,9 @@ enum class PinwheelEventType {
     ERROR,
     INCORRECT_PLATFORM_GIVEN,
     CARD_SWITCH_BEGIN,
+    DD_FORM_BEGIN,
+    DD_FORM_CREATE,
+    DD_FORM_DOWNLOAD,
 }
 
 const val EVENT_MESSAGE = "PINWHEEL_EVENT"
@@ -78,6 +81,10 @@ data class PinwheelLoginPayload(
 
 data class PinwheelLoginAttemptPayload(
     val platformId: String,
+): PinwheelEventPayload
+
+data class PinwheelDDFormCreatePayload(
+    val url: String,
 ): PinwheelEventPayload
 
 
