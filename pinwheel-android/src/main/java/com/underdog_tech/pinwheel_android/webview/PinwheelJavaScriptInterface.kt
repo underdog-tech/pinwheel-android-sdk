@@ -112,6 +112,13 @@ class PinwheelJavaScriptInterface(private val pinwheelEventListener: PinwheelEve
                     "dd_form_download" -> {
                         it.onEvent(PinwheelEventType.DD_FORM_DOWNLOAD, null)
                     }
+                    "screen_transition" -> {
+                        val result: PinwheelScreenTransitionPayload = gson.fromJson(
+                            payload,
+                            PinwheelScreenTransitionPayload::class.java
+                        )
+                        it.onEvent(PinwheelEventType.SCREEN_TRANSITION, result)
+                    }
                 }
             }
         }
