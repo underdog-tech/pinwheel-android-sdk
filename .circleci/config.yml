@@ -7,53 +7,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Pull changelog
-          command: ./scripts/update-sdk.sh --latest
-      - save_cache:
-          key: project-v1-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - .
-  create_github_pr:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      - restore_cache:
-          key: project-v1-{{ .Branch }}-{{ .Revision }}
-      - run:
-          name: Create PR
-          command: ./scripts/create-pr.sh
-
-  release_github:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      - restore_cache:
-          key: project-v1-{{ .Branch }}-{{ .Revision }}
-      - run:
-          name: Swift PM Release (git tag + release)
-          command: ./scripts/release-github.sh
+          name: Done
+          command: echo Done
 
 workflows:
   master-workflow:
     jobs:
       - build_and_prepare:
-          context: 'frontend-production'
-      - create_github_pr:
-          requires:
-            - build_and_prepare
-          context: 'frontend-production'
-          filters:
-            branches:
-              only: master
-      - hold_for_approval:
-          type: approval
-          filters:
-            branches:
-              only: master
-      - release_github:
-          requires:
-            - hold_for_approval
-            - create_github_pr
           context: 'frontend-production'
