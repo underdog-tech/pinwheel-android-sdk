@@ -2,10 +2,13 @@ package com.underdog_tech.pinwheel_android
 
 import android.annotation.SuppressLint
 import android.os.Build
+import android.webkit.DownloadListener
 import android.webkit.WebView
+import android.widget.Toast
 import com.underdog_tech.pinwheel_android.model.ClientMetadata
 import com.underdog_tech.pinwheel_android.webview.PinwheelJavaScriptInterface
 import com.underdog_tech.pinwheel_android.webview.PinwheelWebViewClient
+
 
 object Pinwheel {
 
@@ -24,8 +27,17 @@ object Pinwheel {
         webView.settings.javaScriptEnabled = true
         webView.settings.domStorageEnabled = true
         webView.webViewClient = PinwheelWebViewClient(linkToken, uuid, timestamp, getClientMetadata())
+
+        val blobDownloadJavaScriptInterface = BlobDownloadJavaScriptInterface(webView.context)
+        blobDownloadJavaScriptInterface.bind(webView)
         val pinwheelJSInterface = PinwheelJavaScriptInterface(callback)
         pinwheelJSInterface.bind((webView))
+        webView.setDownloadListener(DownloadListener { url, userAgent, contentDisposition, mimetype, contentLength ->
+            if (url.startsWith("blob:")) {
+                webView.evaluateJavascript(blobDownloadJavaScriptInterface.getBase64StringFromBlobUrl(url), null)
+            }
+            Toast.makeText(webView.context, "Form downloaded", Toast.LENGTH_LONG).show();
+        })
 
         webView.loadUrl(CDN_URL)
     }

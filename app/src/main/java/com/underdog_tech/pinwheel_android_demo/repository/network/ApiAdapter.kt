@@ -8,7 +8,7 @@ import timber.log.Timber
 
 object ApiAdapter {
 
-    private const val BASE_URL = "https://sandbox.getpinwheel.com/"
+    private const val BASE_URL = "https://staging-sandbox.getpinwheel.com/"
 
     val apiClient: ApiInterface = Retrofit.Builder()
         .baseUrl(BASE_URL)
