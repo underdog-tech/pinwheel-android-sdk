@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 class MainViewModel : ViewModel() {
 
     val mode = MutableLiveData("sandbox")
-    val orgName = MutableLiveData<String>()
+    val orgName = MutableLiveData<String>("Test Org")
     val routingNumber = MutableLiveData("775041380")
     val accountNumber = MutableLiveData("2305215639")
     val job = MutableLiveData("direct_deposit_switch")

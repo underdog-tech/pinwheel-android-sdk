@@ -57,22 +57,27 @@ class MainFragment : Fragment(), PinwheelEventListener {
 
     override fun onSuccess(result: PinwheelResult) {
         Timber.d("ON SUCCESS: %s", result)
+        super.onSuccess(result)
     }
 
     override fun onLogin(result: PinwheelLoginPayload) {
         Timber.d("ON LOGIN: %s", result)
+        super.onLogin(result)
     }
 
     override fun onLoginAttempt(result: PinwheelLoginAttemptPayload) {
         Timber.d("ON LOGIN ATTEMPT: %s", result)
+        super.onLoginAttempt(result)
     }
 
     override fun onError(error: PinwheelError) {
         Timber.d("ON ERROR: %s", error)
+        super.onError(error)
     }
 
     override fun onExit(error: PinwheelError?) {
         Timber.d("ON EXIT: %s", error)
+        super.onExit(error)
         parentFragmentManager.popBackStack()
         Toast.makeText(context, "Pinwheel On Exit Event Fired", Toast.LENGTH_LONG).show()
 
@@ -86,6 +91,7 @@ class MainFragment : Fragment(), PinwheelEventListener {
     override fun onEvent(eventName: PinwheelEventType, payload: PinwheelEventPayload?) {
         capturedEvents.add(CapturedEvent(eventName.toString(), payload.toString()))
         Timber.d("ON EVENT: %s %s", eventName, payload)
+        super.onEvent(eventName, payload)
     }
 
 }
