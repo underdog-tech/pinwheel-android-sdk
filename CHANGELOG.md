@@ -11,7 +11,19 @@ All notable changes to this project will be documented in this file.
 
 #### Notes
 
+- Internal support changes for smoother UI/UX.
+
+### [2.4.4](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.4.4)
+
+#### Notes
+
 - Internal support changes.
+
+### [2.4.3](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.4.3)
+
+#### Notes
+
+- Update Proguard consumer rules.
 
 ### [2.4.2](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.4.2)
 
