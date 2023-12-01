@@ -4,14 +4,26 @@ All notable changes to this project will be documented in this file.
 
 ## 2.4.x Releases
 
-- `2.4.x` Releases - [2.4.0](#240) | [2.4.1](#241) | [2.4.2](#242) | [2.4.5](#245)
+- `2.4.x` Releases - [2.4.0](#240) | [2.4.1](#241) | [2.4.2](#242) | [2.4.3](#243) | [2.4.4](#244) | [2.4.5](#245)
 
 ---
 ### [2.4.5](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.4.5)
 
 #### Notes
 
+- Internal support changes for more powerful UI/UX expressivity.
+
+### [2.4.4](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.4.4)
+
+#### Notes
+
 - Internal support changes.
+
+### [2.4.3](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.4.3)
+
+#### Notes
+
+- Update Proguard consumer rules.
 
 ### [2.4.2](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.4.2)
 
