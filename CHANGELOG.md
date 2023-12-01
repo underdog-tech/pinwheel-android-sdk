@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 
 #### Notes
 
-- Internal support changes for smoother UI/UX.
+- Internal support changes for more powerful UI/UX expressivity.
 
 ### [2.4.4](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/2.4.4)
 
