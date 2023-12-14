@@ -10,9 +10,16 @@ All notable changes to this project will be documented in this file.
 
 #### Notes
 
-- Removed `input_amount` event.
+This new major version bump introduces an updated API to support partner-based switches.
+
+*Deprecated events have been removed and we have updated the success event to match the current standard switch schema (used in the `direct_deposit_switch.added` webhook and the `input_allocation` event).*
+
+#### Changed
 - The `action` field in `input_allocation` event is now optional.
-- The `params` field in the `success` event uses the updated switch schema with fields `action` and `allocation`.
+- The `params` field in the `success` event uses the `input_allocation` schema with fields `action` and `allocation`.
+
+#### Removed
+- Removed `input_amount` event.
 
 ## 2.4.x Releases
 
