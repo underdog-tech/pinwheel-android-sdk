@@ -8,8 +8,6 @@ All notable changes to this project will be documented in this file.
 
 ### [3.0.0](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/3.0.0)
 
-#### Notes
-
 This new major version bump introduces an updated API to support partner-based switches.
 
 *Deprecated events have been removed and we have updated the success event to match the current standard switch schema (used in the `direct_deposit_switch.added` webhook and the `input_allocation` event).*
