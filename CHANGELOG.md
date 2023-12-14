@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## 3.0.x Releases
+
+- `3.0.x` Releases = [3.0.0](#300)
+
+### [3.0.0](https://github.com/underdog-tech/pinwheel-android-sdk/releases/tag/3.0.0)
+
+#### Notes
+
+- Removed `input_amount` event.
+- The `action` field in `input_allocation` event is now optional.
+- The `params` field in the `success` event uses the updated switch schema with fields `action` and `allocation`.
+
 ## 2.4.x Releases
 
 - `2.4.x` Releases - [2.4.0](#240) | [2.4.1](#241) | [2.4.2](#242) | [2.4.3](#243) | [2.4.4](#244) | [2.4.5](#245) | [2.4.6](#246)
