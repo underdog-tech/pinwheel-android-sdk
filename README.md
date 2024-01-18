@@ -24,7 +24,7 @@ repositories {
 2. Add the package to your dependencies:
 ```gradle
 dependencies {
-    implementation 'com.getpinwheel:pinwheel-android:3.0.0'
+    implementation 'com.getpinwheel:pinwheel-android:3.0.1'
 }
 ```
 
