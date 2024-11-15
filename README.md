@@ -10,10 +10,8 @@ The Pinwheel Android SDK's main interface is a `Fragment` that you can integrate
 
 ### Installation
 
-The Pinwheel Android SDK is available via [Maven Central Repository](https://search.maven.org/artifact/com.getpinwheel/pinwheel-android) and [GitHub Packages](https://github.com/underdog-tech/pinwheel-android-sdk/packages/719840).
+The Pinwheel Android SDK is available via the [Maven Central Repository](https://search.maven.org/artifact/com.getpinwheel/pinwheel-android).
 
-#### Maven Central Repository
-To install the SDK using the Maven Central Repository
 1. Add `mavenCentral` to your app's `build.gradle` repositories block
 ```gradle
 repositories {
@@ -24,49 +22,18 @@ repositories {
 2. Add the package to your dependencies:
 ```gradle
 dependencies {
-    implementation 'com.getpinwheel:pinwheel-android:3.0.1'
+    implementation 'com.getpinwheel:pinwheel-android:3.1.1'
 }
 ```
 
 3. Sync your Android gradle project and the library should be ready to use.
 
+### Configuration
+Some platform integrations may require camera access for verification purposes. Ensure the following permission is included in your `AndroidManifest.xml`:
 
-#### GitHub Package
-To install the SDK using GitHub packages:
-1. Generage a personal access token [on GitHub](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) with the `read:packages` scope. 
-
-2. Store your credentials in a file named `github.properties`:
-```txt
-gpr.usr=<username or team>
-gpr.key=ghp_xKEY
 ```
-
-> Note: there are other ways to do this, e.g. environment vars, etc..
-
-3. Add the GitHub repository to your app's `build.gradle` file:
-```gradle
-def githubProperties = new Properties()
-githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
-repositories {
-    maven {
-        name = "GitHubPackages"
-        url = uri("https://maven.pkg.github.com/underdog-tech/pinwheel-android-sdk")
-        credentials {
-            username = githubProperties['gpr.usr']
-            password = githubProperties['gpr.key']
-        }
-    }
-}
+<uses-permission android:name="android.permission.CAMERA" />
 ```
-
-4. Add the package to your dependencies:
-```gradle
-dependencies {
-    implementation 'com.underdog_tech.pinwheel:pinwheel-android:3.0.1'
-}
-```
-
-5. Sync your Android gradle project and the library should be ready to use.
 
 ### PinwheelFragment
 
