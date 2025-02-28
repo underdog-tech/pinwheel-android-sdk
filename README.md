@@ -22,17 +22,21 @@ repositories {
 2. Add the package to your dependencies:
 ```gradle
 dependencies {
-    implementation 'com.getpinwheel:pinwheel-android:3.1.3'
+    implementation 'com.getpinwheel:pinwheel-android:3.1.4'
 }
 ```
 
 3. Sync your Android gradle project and the library should be ready to use.
 
 ### Configuration
-Some platform integrations may require camera access for verification purposes. Ensure the following permission is included in your `AndroidManifest.xml`:
+Some platform integrations may require camera access for verification purposes. Additionally, storage access is needed to ensure direct deposit form downloads function correctly on API 28 (Android 9) and below.
+
+Ensure the following permissions are included in your `AndroidManifest.xml`:
 
 ```
 <uses-permission android:name="android.permission.CAMERA" />
+
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
 ```
 
 ### PinwheelFragment
