@@ -2,15 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
-## 3.0.x Releases
+## 3.x Releases
 
-- `3.0.x` Releases = [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.0.6](#306) | [3.1.0](#310) | [3.1.1](#311) | [3.1.2](#312) | [3.1.3](#313) | [3.1.4](#314) | [3.1.5](#315) | [3.1.6](#316)
+- `3.x` Releases = [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.0.6](#306) | [3.1.0](#310) | [3.1.1](#311) | [3.1.2](#312) | [3.1.3](#313) | [3.1.4](#314) | [3.1.5](#315) | [3.2.0](#320)
 
-### [3.1.6](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/3.1.6)
+### [3.2.0](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/3.2.0)
 
 #### Notes
 
 Introduces dark mode support for Link, which can be enabled using the `useDarkMode` parameter in the `PinwheelFragment.newInstance` method.
+
+Renamed advanced `newInstance` overload to `newInstanceWithAdvancedOptions` to clarify it's intended for internal use.
 
 ### [3.1.5](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/3.1.5)
 
