@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## 3.x Releases
 
-- `3.x` Releases = [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.0.6](#306) | [3.1.0](#310) | [3.1.1](#311) | [3.1.2](#312) | [3.1.3](#313) | [3.1.4](#314) | [3.1.5](#315) | [3.2.0](#320)
+- `3.x` Releases = [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.0.6](#306) | [3.1.0](#310) | [3.1.1](#311) | [3.1.2](#312) | [3.1.3](#313) | [3.1.4](#314) | [3.1.5](#315) | [3.2.0](#320) | [3.2.1](#321)
+
+### [3.2.1](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/3.2.1)
+
+#### Notes
+
+Updates R8/proguard rules to prevent duplicate class errors in some instances.
 
 ### [3.2.0](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/3.2.0)
 
@@ -107,13 +113,15 @@ Some integrations may now require camera access for verification purposes. Ensur
 
 This new major version bump introduces an updated API to support partner-based switches.
 
-*Deprecated events have been removed and we have updated the success event to match the current standard switch schema (used in the `direct_deposit_switch.added` webhook and the `input_allocation` event).*
+_Deprecated events have been removed and we have updated the success event to match the current standard switch schema (used in the `direct_deposit_switch.added` webhook and the `input_allocation` event)._
 
 #### Changed
+
 - The `action` field in `input_allocation` event is now optional.
 - The `params` field in the `success` event uses the `input_allocation` schema with fields `action` and `allocation`.
 
 #### Removed
+
 - Removed `input_amount` event.
 
 ## 2.4.x Releases
@@ -121,6 +129,7 @@ This new major version bump introduces an updated API to support partner-based s
 - `2.4.x` Releases - [2.4.0](#240) | [2.4.1](#241) | [2.4.2](#242) | [2.4.3](#243) | [2.4.4](#244) | [2.4.5](#245) | [2.4.6](#246) | [2.4.7](#247)
 
 ---
+
 ### [2.4.7](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/2.4.7)
 
 #### Notes
@@ -193,11 +202,9 @@ We're thrilled to announce the latest version of our SDK! While you'll find that
 
 - Adding new payload for the PinwheelEventType.INPUT_ALLOCATION event.
 
-
 ### [2.3.16](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/2.3.16)
 
 - Update version for test deploy
-
 
 ### [2.3.15](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/2.3.14)
 

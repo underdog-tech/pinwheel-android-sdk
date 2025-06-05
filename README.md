@@ -13,6 +13,7 @@ The Pinwheel Android SDK's main interface is a `Fragment` that you can integrate
 The Pinwheel Android SDK is available via the [Maven Central Repository](https://search.maven.org/artifact/com.getpinwheel/pinwheel-android).
 
 1. Add `mavenCentral` to your app's `build.gradle` repositories block
+
 ```gradle
 repositories {
     mavenCentral()
@@ -20,15 +21,17 @@ repositories {
 ```
 
 2. Add the package to your dependencies:
+
 ```gradle
 dependencies {
-    implementation 'com.getpinwheel:pinwheel-android:3.2.0'
+    implementation 'com.getpinwheel:pinwheel-android:3.2.1'
 }
 ```
 
 3. Sync your Android gradle project and the library should be ready to use.
 
 ### Configuration
+
 Some platform integrations may require camera access for verification purposes. Additionally, storage access is needed to ensure direct deposit form downloads function correctly on API 28 (Android 9) and below.
 
 Ensure the following permissions are included in your `AndroidManifest.xml`:
@@ -41,7 +44,7 @@ Ensure the following permissions are included in your `AndroidManifest.xml`:
 
 ### PinwheelFragment
 
-To initialize the `PinwheelFragment`, a short-lived Link token will need to be generated first. Your mobile app should fetch the Link token from your server. DO NOT ever send this request from the client side and publicly expose your `api_secret`. 
+To initialize the `PinwheelFragment`, a short-lived Link token will need to be generated first. Your mobile app should fetch the Link token from your server. DO NOT ever send this request from the client side and publicly expose your `api_secret`.
 
 The link token returned is valid for 15 minutes, after which it expires and can no longer be used to initialize the `PinwheelFragment`. The expiration time is returned as a unix timestamp. You can read more about Link tokens on our [documentation site](https://docs.getpinwheel.com/docs/api/reference/pinwheel-api.v1.json/paths/~1link_tokens/post).
 
@@ -55,7 +58,7 @@ val pinwheelFragment = PinwheelFragment.newInstance(token)
 
 ## PinwheelEventListener
 
-The `PinwheelEventListener` interface is set up such that every event goes through the required `onEvent(eventName:, payload:)` handler, and optional convenience methods are provided for `onLogin`, `onSuccess`, `onError`, and  `onExit`. Note that the `onEvent(eventName:, payload:)` handler will still be called alongside the convenience methods.   
+The `PinwheelEventListener` interface is set up such that every event goes through the required `onEvent(eventName:, payload:)` handler, and optional convenience methods are provided for `onLogin`, `onSuccess`, `onError`, and `onExit`. Note that the `onEvent(eventName:, payload:)` handler will still be called alongside the convenience methods.
 
 ### `onEvent(eventName: PinwheelEventType, payload: PinwheelEventPayload?)`
 
