@@ -4,7 +4,25 @@ All notable changes to this project will be documented in this file.
 
 ## 3.x Releases
 
-- `3.x` Releases = [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.0.6](#306) | [3.1.0](#310) | [3.1.1](#311) | [3.1.2](#312) | [3.1.3](#313) | [3.1.4](#314) | [3.1.5](#315) | [3.2.0](#320) | [3.2.1](#321)
+- `3.x` Releases = [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.0.6](#306) | [3.1.0](#310) | [3.1.1](#311) | [3.1.2](#312) | [3.1.3](#313) | [3.1.4](#314) | [3.1.5](#315) | [3.2.0](#320) | [3.2.1](#321) | [3.3.0](#330) | [3.4.0](#340) | [3.4.1](#341)
+
+### [3.4.1](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/3.4.1)
+
+#### Notes
+
+Fix top-level obfuscated class introduced in 3.3.0 release.
+
+### [3.4.0](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/3.4.0)
+
+#### Notes
+
+Enhanced support for [Bill Navigator](https://www.pinwheelapi.com/bill-navigator).
+
+### [3.3.0](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/3.3.0)
+
+#### Notes
+
+Internal upgrades to target Android SDK 34.
 
 ### [3.2.1](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/3.2.1)
 
