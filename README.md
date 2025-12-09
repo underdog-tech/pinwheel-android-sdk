@@ -24,7 +24,7 @@ repositories {
 
 ```gradle
 dependencies {
-    implementation 'com.getpinwheel:pinwheel-android:3.4.1'
+    implementation 'com.getpinwheel:pinwheel-android:3.5.2'
 }
 ```
 
