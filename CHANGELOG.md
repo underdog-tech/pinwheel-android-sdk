@@ -2,9 +2,54 @@
 
 All notable changes to this project will be documented in this file.
 
+## 4.x Releases
+
+- `4.0.x` Releases - [4.0.0](#400)
+
+### [4.0.0](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/4.0.0)
+
+#### Notes
+
+- Upgrades the SDK to target the latest version of Link: v4.
+- Adds support for a new set of bill and account lifecycle events.
+
+#### Breaking Changes
+
+- The `BILL_REMOVED` event handler now uses `PinwheelBillEventPayload` instead of `PinwheelBillSwitchEventPayload`.
+
+#### Non-breaking Changes
+
+- An optional `accountId` field has been added to `PinwheelBillSwitchEventPayload`.
+
+#### New event types
+
+- `BILL_SWITCH_FAILURE`
+- `BILL_ADDED`
+- `BILL_EDITED`
+- `BILL_MARKED_INACTIVE`
+- `BILL_SWITCH_PLATFORMS_ADDED`
+- `BILL_SWITCH_PLATFORMS_REMOVED`
+- `BILL_CANCEL_SUCCESS`
+- `BILL_CANCEL_FAILURE`
+- `CALENDAR_SYNC`
+- `CUSTOMER_TERMS_ACCEPTED`
+- `USER_ACTIVATED`
+
 ## 3.x Releases
 
-- `3.x` Releases = [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.0.6](#306) | [3.1.0](#310) | [3.1.1](#311) | [3.1.2](#312) | [3.1.3](#313) | [3.1.4](#314) | [3.1.5](#315) | [3.2.0](#320) | [3.2.1](#321) | [3.3.0](#330) | [3.4.0](#340) | [3.4.1](#341) | [3.5.0](#350) | [3.5.1](#351) | [3.5.2](#352)
+- `3.x` Releases = [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.0.6](#306) | [3.1.0](#310) | [3.1.1](#311) | [3.1.2](#312) | [3.1.3](#313) | [3.1.4](#314) | [3.1.5](#315) | [3.2.0](#320) | [3.2.1](#321) | [3.3.0](#330) | [3.4.0](#340) | [3.4.1](#341) | [3.5.0](#350) | [3.5.1](#351) | [3.5.2](#352) | [3.6.0](#360) | [3.6.1](#361) | [3.6.2](#362)
+
+### [3.6.2](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/3.6.2)
+
+#### Notes
+
+No-op release. Version bump only to exercise the automated CI release pipeline end-to-end; no functional changes to the SDK.
+
+### [3.6.1](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/3.6.1)
+
+#### Notes
+
+Migrated the release pipeline from the deprecated OSSRH publishing gateway (shut down June 30, 2025) to the Maven Central Publisher Portal.
 
 ### [3.6.0](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/3.6.0)
 
