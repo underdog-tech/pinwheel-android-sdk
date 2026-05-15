@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## 4.x Releases
 
-- `4.0.x` Releases - [4.0.0](#400)
+- `4.x` Releases - [4.0.0](#400) | [4.1.0](#410)
+
+### [4.1.0](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/4.1.0)
+
+#### Notes
+
+- Optimize Native Link performance on start up
 
 ### [4.0.0](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/4.0.0)
 
@@ -15,7 +21,7 @@ All notable changes to this project will be documented in this file.
 
 #### Breaking Changes
 
-- The `BILL_REMOVED` event handler now uses `PinwheelBillEventPayload` instead of `PinwheelBillSwitchEventPayload`.
+- The `billRemoved` event handler now uses `PinwheelBillEventPayload` instead of `PinwheelBillSwitchEventPayload`.
 
 #### Non-breaking Changes
 
@@ -23,17 +29,17 @@ All notable changes to this project will be documented in this file.
 
 #### New event types
 
-- `BILL_SWITCH_FAILURE`
-- `BILL_ADDED`
-- `BILL_EDITED`
-- `BILL_MARKED_INACTIVE`
-- `BILL_SWITCH_PLATFORMS_ADDED`
-- `BILL_SWITCH_PLATFORMS_REMOVED`
-- `BILL_CANCEL_SUCCESS`
-- `BILL_CANCEL_FAILURE`
-- `CALENDAR_SYNC`
-- `CUSTOMER_TERMS_ACCEPTED`
-- `USER_ACTIVATED`
+- `billSwitchFailure`
+- `billAdded`
+- `billEdited`
+- `billMarkedInactive`
+- `billSwitchPlatformsAdded`
+- `billSwitchPlatformsRemoved`
+- `billCancelSuccess`
+- `billCancelFailure`
+- `calendarSync`
+- `customerTermsAccepted`
+- `userActivated`
 
 ## 3.x Releases
 
