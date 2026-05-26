@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## 4.x Releases
 
-- `4.x` Releases - [4.0.0](#400) | [4.1.0](#410)
+- `4.x` Releases - [4.0.0](#400) | [4.1.0](#410) | [4.1.1](#411)
+
+### [4.1.1](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/4.1.1)
+
+#### Notes
+
+- Bump underlying dependencies to resolve surfaced CVE's.
 
 ### [4.1.0](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/4.1.0)
 
