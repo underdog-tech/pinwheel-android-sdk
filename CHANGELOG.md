@@ -4,7 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## 4.x Releases
 
-- `4.x` Releases - [4.0.0](#400) | [4.1.0](#410) | [4.1.1](#411)
+- `4.x` Releases - [4.0.0](#400) | [4.1.0](#410) | [4.1.1](#411) | [4.1.2](#412)
+
+### [4.1.2](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/4.1.2)
+
+#### Notes
+
+- We improved security posture by limiting OAuth scope required for Bill Suite products.
+
+#### Migration (Bill Switch)
+
+Host apps using Bill Switch should complete OAuth in the activity that hosts `PinwheelFragment`:
+
+1. Set `android:launchMode="singleTask"` and add the OAuth-completion intent filter (see the sample app `AndroidManifest.xml`).
+2. Forward incoming URIs to `PinwheelFragment.handleDeepLink(context, uri)` from `onCreate` and `onNewIntent`.
 
 ### [4.1.1](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/4.1.1)
 
