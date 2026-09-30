@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## 4.x Releases
 
-- `4.x` Releases - [4.0.0](#400) | [4.1.0](#410) | [4.1.1](#411) | [4.1.2](#412)
+- `4.x` Releases - [4.0.0](#400) | [4.1.0](#410) | [4.1.1](#411) | [4.1.2](#412) | [4.1.3](#413)
+
+### [4.1.3](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/4.1.3)
+
+#### Notes
+
+- Bump fastlane to 2.240.1 so rubyzip can move to 3.x and clear the path-traversal advisory.
 
 ### [4.1.2](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/4.1.2)
 
