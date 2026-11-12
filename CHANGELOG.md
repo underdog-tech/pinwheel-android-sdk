@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## 4.x Releases
 
-- `4.x` Releases - [4.0.0](#400) | [4.1.0](#410) | [4.1.1](#411) | [4.1.2](#412) | [4.1.3](#413) | [4.2.0](#420)
+- `4.x` Releases - [4.0.0](#400) | [4.1.0](#410) | [4.1.1](#411) | [4.1.2](#412) | [4.1.3](#413) | [4.2.0](#420) | [4.2.1](#421)
+
+### [4.2.1](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/4.2.1)
+
+#### Notes
+
+- Improves internal build tooling.
 
 ### [4.2.0](https://repo1.maven.org/maven2/com/getpinwheel/pinwheel-android/4.2.0)
 
